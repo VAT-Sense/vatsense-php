@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Concerns;
+namespace VatsenseVatsensePhp\Core\Concerns;
 
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Core\Conversion;
-use VatsenseVatsense\Core\Conversion\CoerceState;
-use VatsenseVatsense\Core\Conversion\Contracts\Converter;
-use VatsenseVatsense\Core\Conversion\ModelOf;
-use VatsenseVatsense\Core\Util;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Core\Conversion;
+use VatsenseVatsensePhp\Core\Conversion\CoerceState;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
+use VatsenseVatsensePhp\Core\Conversion\ModelOf;
+use VatsenseVatsensePhp\Core\Util;
 
 /**
  * @internal

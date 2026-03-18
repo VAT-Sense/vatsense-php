@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Validate;
+namespace VatsenseVatsensePhp\Validate;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Validate\ValidateCheckResponse\Data;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data;
 
 /**
- * @phpstan-import-type DataShape from \VatsenseVatsense\Validate\ValidateCheckResponse\Data
+ * @phpstan-import-type DataShape from \VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data
  *
  * @phpstan-type ValidateCheckResponseShape = array{
  *   code?: int|null, data?: null|Data|DataShape, success?: bool|null

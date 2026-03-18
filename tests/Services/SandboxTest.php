@@ -6,9 +6,9 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Sandbox\SandboxGenerateKeyResponse;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Sandbox\SandboxGenerateKeyResponse;
 
 /**
  * @internal

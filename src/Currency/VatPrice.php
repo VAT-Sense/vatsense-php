@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Currency;
+namespace VatsenseVatsensePhp\Currency;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Currency\VatPrice\Object_;
-use VatsenseVatsense\Currency\VatPrice\TaxType;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Currency\VatPrice\Object_;
+use VatsenseVatsensePhp\Currency\VatPrice\TaxType;
 
 /**
  * @phpstan-type VatPriceShape = array{

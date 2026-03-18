@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice;
+namespace VatsenseVatsensePhp\Invoice;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Invoice\Invoice\Business;
-use VatsenseVatsense\Invoice\Invoice\Customer;
-use VatsenseVatsense\Invoice\Invoice\Object_;
-use VatsenseVatsense\Invoice\Invoice\TaxType;
-use VatsenseVatsense\Invoice\Invoice\Totals;
-use VatsenseVatsense\Invoice\Invoice\Type;
-use VatsenseVatsense\Invoice\Item\InvoiceItem;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Invoice\Invoice\Business;
+use VatsenseVatsensePhp\Invoice\Invoice\Customer;
+use VatsenseVatsensePhp\Invoice\Invoice\Object_;
+use VatsenseVatsensePhp\Invoice\Invoice\TaxType;
+use VatsenseVatsensePhp\Invoice\Invoice\Totals;
+use VatsenseVatsensePhp\Invoice\Invoice\Type;
+use VatsenseVatsensePhp\Invoice\Item\InvoiceItem;
 
 /**
- * @phpstan-import-type BusinessShape from \VatsenseVatsense\Invoice\Invoice\Business
- * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsense\Invoice\InvoiceConversionInput
- * @phpstan-import-type CustomerShape from \VatsenseVatsense\Invoice\Invoice\Customer
- * @phpstan-import-type InvoiceItemShape from \VatsenseVatsense\Invoice\Item\InvoiceItem
- * @phpstan-import-type TotalsShape from \VatsenseVatsense\Invoice\Invoice\Totals
+ * @phpstan-import-type BusinessShape from \VatsenseVatsensePhp\Invoice\Invoice\Business
+ * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsensePhp\Invoice\InvoiceConversionInput
+ * @phpstan-import-type CustomerShape from \VatsenseVatsensePhp\Invoice\Invoice\Customer
+ * @phpstan-import-type InvoiceItemShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItem
+ * @phpstan-import-type TotalsShape from \VatsenseVatsensePhp\Invoice\Invoice\Totals
  *
  * @phpstan-type InvoiceShape = array{
  *   id?: string|null,

@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services\Invoice;
+namespace VatsenseVatsensePhp\Services\Invoice;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Invoice\InvoiceResponse;
-use VatsenseVatsense\Invoice\Item\InvoiceItemInput;
-use VatsenseVatsense\Invoice\Item\ItemGetResponse;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\Invoice\ItemContract;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Invoice\InvoiceResponse;
+use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
+use VatsenseVatsensePhp\Invoice\Item\ItemGetResponse;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\Invoice\ItemContract;
 
 /**
  * VAT-compliant invoice management.
  *
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsense\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class ItemService implements ItemContract
 {

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\ServiceContracts\Invoice;
+namespace VatsenseVatsensePhp\ServiceContracts\Invoice;
 
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Invoice\InvoiceResponse;
-use VatsenseVatsense\Invoice\Item\InvoiceItemInput;
-use VatsenseVatsense\Invoice\Item\ItemGetResponse;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Invoice\InvoiceResponse;
+use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
+use VatsenseVatsensePhp\Invoice\Item\ItemGetResponse;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsense\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 interface ItemContract
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Concerns;
+namespace VatsenseVatsensePhp\Core\Concerns;
 
-use VatsenseVatsense\Core\Conversion\Contracts\Converter;
-use VatsenseVatsense\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsense\Core\Conversion\UnionOf;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
+use VatsenseVatsensePhp\Core\Conversion\UnionOf;
 
 /**
  * @internal

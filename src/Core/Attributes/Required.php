@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Attributes;
+namespace VatsenseVatsensePhp\Core\Attributes;
 
-use VatsenseVatsense\Core\Conversion\Contracts\Converter;
-use VatsenseVatsense\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsense\Core\Conversion\EnumOf;
-use VatsenseVatsense\Core\Conversion\ListOf;
-use VatsenseVatsense\Core\Conversion\MapOf;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
+use VatsenseVatsensePhp\Core\Conversion\EnumOf;
+use VatsenseVatsensePhp\Core\Conversion\ListOf;
+use VatsenseVatsensePhp\Core\Conversion\MapOf;
 
 /**
  * @internal

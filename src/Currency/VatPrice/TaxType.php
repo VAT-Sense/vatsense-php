@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Currency\VatPrice;
+namespace VatsenseVatsensePhp\Currency\VatPrice;
 
 /**
  * Whether the price is inclusive or exclusive of VAT.

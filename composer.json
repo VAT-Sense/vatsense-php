@@ -6,7 +6,7 @@
       "src/Version.php"
     ],
     "psr-4": {
-      "VatsenseVatsense\\": "src/"
+      "VatsenseVatsensePhp\\": "src/"
     }
   },
   "autoload-dev": {

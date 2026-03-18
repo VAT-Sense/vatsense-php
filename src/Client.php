@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense;
+namespace VatsenseVatsensePhp;
 
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
-use VatsenseVatsense\Core\BaseClient;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Services\CountriesService;
-use VatsenseVatsense\Services\CurrencyService;
-use VatsenseVatsense\Services\InvoiceService;
-use VatsenseVatsense\Services\RatesService;
-use VatsenseVatsense\Services\SandboxService;
-use VatsenseVatsense\Services\UsageService;
-use VatsenseVatsense\Services\ValidateService;
+use VatsenseVatsensePhp\Core\BaseClient;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Services\CountriesService;
+use VatsenseVatsensePhp\Services\CurrencyService;
+use VatsenseVatsensePhp\Services\InvoiceService;
+use VatsenseVatsensePhp\Services\RatesService;
+use VatsenseVatsensePhp\Services\SandboxService;
+use VatsenseVatsensePhp\Services\UsageService;
+use VatsenseVatsensePhp\Services\ValidateService;
 
 /**
- * @phpstan-import-type NormalizedRequest from \VatsenseVatsense\Core\BaseClient
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type NormalizedRequest from \VatsenseVatsensePhp\Core\BaseClient
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 class Client extends BaseClient
 {

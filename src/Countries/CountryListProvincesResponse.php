@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Countries;
+namespace VatsenseVatsensePhp\Countries;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Countries\CountryListProvincesResponse\Data;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Countries\CountryListProvincesResponse\Data;
 
 /**
- * @phpstan-import-type DataShape from \VatsenseVatsense\Countries\CountryListProvincesResponse\Data
+ * @phpstan-import-type DataShape from \VatsenseVatsensePhp\Countries\CountryListProvincesResponse\Data
  *
  * @phpstan-type CountryListProvincesResponseShape = array{
  *   code?: int|null, data?: list<Data|DataShape>|null, success?: bool|null

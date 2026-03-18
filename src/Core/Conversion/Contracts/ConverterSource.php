@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Conversion\Contracts;
+namespace VatsenseVatsensePhp\Core\Conversion\Contracts;
 
 /**
  * @internal

@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services;
+namespace VatsenseVatsensePhp\Services;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Currency\CurrencyCalculateVatPriceParams;
-use VatsenseVatsense\Currency\CurrencyCalculateVatPriceParams\TaxType;
-use VatsenseVatsense\Currency\CurrencyCalculateVatPriceResponse;
-use VatsenseVatsense\Currency\CurrencyConvertParams;
-use VatsenseVatsense\Currency\CurrencyConvertResponse;
-use VatsenseVatsense\Currency\CurrencyListParams;
-use VatsenseVatsense\Currency\CurrencyListParams\To;
-use VatsenseVatsense\Currency\CurrencyListResponse;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\CurrencyRawContract;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams;
+use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams\TaxType;
+use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceResponse;
+use VatsenseVatsensePhp\Currency\CurrencyConvertParams;
+use VatsenseVatsensePhp\Currency\CurrencyConvertResponse;
+use VatsenseVatsensePhp\Currency\CurrencyListParams;
+use VatsenseVatsensePhp\Currency\CurrencyListParams\To;
+use VatsenseVatsensePhp\Currency\CurrencyListResponse;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\CurrencyRawContract;
 
 /**
  * Currency exchange rates and conversion.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class CurrencyRawService implements CurrencyRawContract
 {

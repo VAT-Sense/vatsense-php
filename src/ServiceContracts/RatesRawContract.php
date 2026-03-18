@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\ServiceContracts;
+namespace VatsenseVatsensePhp\ServiceContracts;
 
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Rates\FindRate;
-use VatsenseVatsense\Rates\RateCalculatePriceParams;
-use VatsenseVatsense\Rates\RateCalculatePriceResponse;
-use VatsenseVatsense\Rates\RateDetailsParams;
-use VatsenseVatsense\Rates\RateFindParams;
-use VatsenseVatsense\Rates\RateListParams;
-use VatsenseVatsense\Rates\RateListResponse;
-use VatsenseVatsense\Rates\RateListTypesResponse;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Rates\FindRate;
+use VatsenseVatsensePhp\Rates\RateCalculatePriceParams;
+use VatsenseVatsensePhp\Rates\RateCalculatePriceResponse;
+use VatsenseVatsensePhp\Rates\RateDetailsParams;
+use VatsenseVatsensePhp\Rates\RateFindParams;
+use VatsenseVatsensePhp\Rates\RateListParams;
+use VatsenseVatsensePhp\Rates\RateListResponse;
+use VatsenseVatsensePhp\Rates\RateListTypesResponse;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 interface RatesRawContract
 {

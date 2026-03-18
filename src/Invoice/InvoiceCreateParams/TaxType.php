@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice\InvoiceCreateParams;
+namespace VatsenseVatsensePhp\Invoice\InvoiceCreateParams;
 
 /**
  * Whether item prices include or exclude VAT.

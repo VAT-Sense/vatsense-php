@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\ServiceContracts;
+namespace VatsenseVatsensePhp\ServiceContracts;
 
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Invoice\InvoiceBusinessInput;
-use VatsenseVatsense\Invoice\InvoiceConversionInput;
-use VatsenseVatsense\Invoice\InvoiceCreateParams\TaxType;
-use VatsenseVatsense\Invoice\InvoiceCreateParams\Type;
-use VatsenseVatsense\Invoice\InvoiceCustomerInput;
-use VatsenseVatsense\Invoice\InvoiceDeleteResponse;
-use VatsenseVatsense\Invoice\InvoiceListResponse;
-use VatsenseVatsense\Invoice\InvoiceResponse;
-use VatsenseVatsense\Invoice\Item\InvoiceItemInput;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Invoice\InvoiceBusinessInput;
+use VatsenseVatsensePhp\Invoice\InvoiceConversionInput;
+use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\TaxType;
+use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\Type;
+use VatsenseVatsensePhp\Invoice\InvoiceCustomerInput;
+use VatsenseVatsensePhp\Invoice\InvoiceDeleteResponse;
+use VatsenseVatsensePhp\Invoice\InvoiceListResponse;
+use VatsenseVatsensePhp\Invoice\InvoiceResponse;
+use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
- * @phpstan-import-type InvoiceBusinessInputShape from \VatsenseVatsense\Invoice\InvoiceBusinessInput
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsense\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsense\Invoice\InvoiceConversionInput
- * @phpstan-import-type InvoiceCustomerInputShape from \VatsenseVatsense\Invoice\InvoiceCustomerInput
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type InvoiceBusinessInputShape from \VatsenseVatsensePhp\Invoice\InvoiceBusinessInput
+ * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsensePhp\Invoice\InvoiceConversionInput
+ * @phpstan-import-type InvoiceCustomerInputShape from \VatsenseVatsensePhp\Invoice\InvoiceCustomerInput
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 interface InvoiceContract
 {
@@ -101,8 +101,8 @@ interface InvoiceContract
      * @param string $notes any additional notes for the invoice
      * @param int $padInvoiceNumber pad the auto-generated invoice number with leading zeros to this length
      * @param string $serial A serial prepended to the auto-generated invoice number. Each unique serial has its own auto-increment range.
-     * @param \VatsenseVatsense\Invoice\InvoiceUpdateParams\TaxType|value-of<\VatsenseVatsense\Invoice\InvoiceUpdateParams\TaxType> $taxType whether item prices include or exclude VAT
-     * @param \VatsenseVatsense\Invoice\InvoiceUpdateParams\Type|value-of<\VatsenseVatsense\Invoice\InvoiceUpdateParams\Type> $type the type of invoice
+     * @param \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\TaxType|value-of<\VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\TaxType> $taxType whether item prices include or exclude VAT
+     * @param \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\Type|value-of<\VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\Type> $type the type of invoice
      * @param bool $zeroRated whether the invoice has been zero-rated
      * @param RequestOpts|null $requestOptions
      *
@@ -124,8 +124,8 @@ interface InvoiceContract
         ?string $notes = null,
         ?int $padInvoiceNumber = null,
         ?string $serial = null,
-        \VatsenseVatsense\Invoice\InvoiceUpdateParams\TaxType|string $taxType = 'incl',
-        \VatsenseVatsense\Invoice\InvoiceUpdateParams\Type|string $type = 'sale',
+        \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\TaxType|string $taxType = 'incl',
+        \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\Type|string $type = 'sale',
         bool $zeroRated = false,
         RequestOptions|array|null $requestOptions = null,
     ): InvoiceResponse;

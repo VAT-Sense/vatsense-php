@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice;
+namespace VatsenseVatsensePhp\Invoice;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Attributes\Required;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Concerns\SdkParams;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Invoice\InvoiceCreateParams\TaxType;
-use VatsenseVatsense\Invoice\InvoiceCreateParams\Type;
-use VatsenseVatsense\Invoice\Item\InvoiceItemInput;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Attributes\Required;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Concerns\SdkParams;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\TaxType;
+use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\Type;
+use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
 
 /**
  * Create a new VAT-compliant invoice. VAT Sense will automatically
@@ -19,12 +19,12 @@ use VatsenseVatsense\Invoice\Item\InvoiceItemInput;
  *
  * Not available with sandbox API keys.
  *
- * @see VatsenseVatsense\Services\InvoiceService::create()
+ * @see VatsenseVatsensePhp\Services\InvoiceService::create()
  *
- * @phpstan-import-type InvoiceBusinessInputShape from \VatsenseVatsense\Invoice\InvoiceBusinessInput
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsense\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsense\Invoice\InvoiceConversionInput
- * @phpstan-import-type InvoiceCustomerInputShape from \VatsenseVatsense\Invoice\InvoiceCustomerInput
+ * @phpstan-import-type InvoiceBusinessInputShape from \VatsenseVatsensePhp\Invoice\InvoiceBusinessInput
+ * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsensePhp\Invoice\InvoiceConversionInput
+ * @phpstan-import-type InvoiceCustomerInputShape from \VatsenseVatsensePhp\Invoice\InvoiceCustomerInput
  *
  * @phpstan-type InvoiceCreateParamsShape = array{
  *   business: InvoiceBusinessInput|InvoiceBusinessInputShape,

@@ -5,7 +5,7 @@ namespace Tests;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Mock\Client;
 use PHPUnit\Framework\TestCase;
-use VatsenseVatsense\Core\Util;
+use VatsenseVatsensePhp\Core\Util;
 
 /**
  * @internal
@@ -26,7 +26,7 @@ class ClientTest extends TestCase
 
         $transporter->setDefaultResponse($mockRsp);
 
-        $client = new \VatsenseVatsense\Client(
+        $client = new \VatsenseVatsensePhp\Client(
             baseUrl: 'http://localhost',
             username: 'My Username',
             password: 'My Password',

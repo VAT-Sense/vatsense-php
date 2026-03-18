@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\ServiceContracts;
+namespace VatsenseVatsensePhp\ServiceContracts;
 
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Currency\CurrencyCalculateVatPriceParams\TaxType;
-use VatsenseVatsense\Currency\CurrencyCalculateVatPriceResponse;
-use VatsenseVatsense\Currency\CurrencyConvertResponse;
-use VatsenseVatsense\Currency\CurrencyListParams\To;
-use VatsenseVatsense\Currency\CurrencyListResponse;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams\TaxType;
+use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceResponse;
+use VatsenseVatsensePhp\Currency\CurrencyConvertResponse;
+use VatsenseVatsensePhp\Currency\CurrencyListParams\To;
+use VatsenseVatsensePhp\Currency\CurrencyListResponse;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 interface CurrencyContract
 {
@@ -55,7 +55,7 @@ interface CurrencyContract
      *
      * @param string $amount The amount to convert. Must be a string with exactly 2 decimal places (e.g. "39.99").
      * @param string $from The 3-character source currency code (e.g. "USD", "CAD").
-     * @param \VatsenseVatsense\Currency\CurrencyConvertParams\To|value-of<\VatsenseVatsense\Currency\CurrencyConvertParams\To> $to The 3-character target currency code. Must be either "GBP" or "EUR".
+     * @param \VatsenseVatsensePhp\Currency\CurrencyConvertParams\To|value-of<\VatsenseVatsensePhp\Currency\CurrencyConvertParams\To> $to The 3-character target currency code. Must be either "GBP" or "EUR".
      * @param RequestOpts|null $requestOptions
      *
      * @throws APIException
@@ -63,7 +63,7 @@ interface CurrencyContract
     public function convert(
         string $amount,
         string $from,
-        \VatsenseVatsense\Currency\CurrencyConvertParams\To|string $to,
+        \VatsenseVatsensePhp\Currency\CurrencyConvertParams\To|string $to,
         RequestOptions|array|null $requestOptions = null,
     ): CurrencyConvertResponse;
 }

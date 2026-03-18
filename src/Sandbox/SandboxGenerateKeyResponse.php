@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Sandbox;
+namespace VatsenseVatsensePhp\Sandbox;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Sandbox\SandboxGenerateKeyResponse\Data;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Sandbox\SandboxGenerateKeyResponse\Data;
 
 /**
- * @phpstan-import-type DataShape from \VatsenseVatsense\Sandbox\SandboxGenerateKeyResponse\Data
+ * @phpstan-import-type DataShape from \VatsenseVatsensePhp\Sandbox\SandboxGenerateKeyResponse\Data
  *
  * @phpstan-type SandboxGenerateKeyResponseShape = array{
  *   code?: int|null, data?: null|Data|DataShape, success?: bool|null

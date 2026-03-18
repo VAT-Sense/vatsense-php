@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Conversion;
+namespace VatsenseVatsensePhp\Core\Conversion;
 
-use VatsenseVatsense\Core\Conversion\Concerns\ArrayOf;
-use VatsenseVatsense\Core\Conversion\Contracts\Converter;
+use VatsenseVatsensePhp\Core\Conversion\Concerns\ArrayOf;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
 
 /**
  * @internal

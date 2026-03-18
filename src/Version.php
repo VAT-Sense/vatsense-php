@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense;
+namespace VatsenseVatsensePhp;
 
 // x-release-please-start-version
 const VERSION = '0.0.1';

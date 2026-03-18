@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Currency\CurrencyCalculateVatPriceParams;
+namespace VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams;
 
 /**
  * Whether the provided price is inclusive or exclusive of VAT.

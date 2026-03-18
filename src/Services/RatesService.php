@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services;
+namespace VatsenseVatsensePhp\Services;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Rates\FindRate;
-use VatsenseVatsense\Rates\RateCalculatePriceParams\TaxType;
-use VatsenseVatsense\Rates\RateCalculatePriceResponse;
-use VatsenseVatsense\Rates\RateListResponse;
-use VatsenseVatsense\Rates\RateListTypesResponse;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\RatesContract;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Rates\FindRate;
+use VatsenseVatsensePhp\Rates\RateCalculatePriceParams\TaxType;
+use VatsenseVatsensePhp\Rates\RateCalculatePriceResponse;
+use VatsenseVatsensePhp\Rates\RateListResponse;
+use VatsenseVatsensePhp\Rates\RateListTypesResponse;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\RatesContract;
 
 /**
  * VAT/GST rate lookups for countries worldwide.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class RatesService implements RatesContract
 {
