@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice\Item;
+namespace VatsenseVatsensePhp\Invoice\Item;
 
-use VatsenseVatsense\Core\Attributes\Required;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Concerns\SdkParams;
-use VatsenseVatsense\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Core\Attributes\Required;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Concerns\SdkParams;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
 
 /**
  * Add one or more line items to an existing invoice.
  *
- * @see VatsenseVatsense\Services\Invoice\ItemService::add()
+ * @see VatsenseVatsensePhp\Services\Invoice\ItemService::add()
  *
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsense\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
  *
  * @phpstan-type ItemAddParamsShape = array{
  *   items: list<InvoiceItemInput|InvoiceItemInputShape>

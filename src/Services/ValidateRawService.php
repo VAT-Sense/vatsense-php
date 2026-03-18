@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services;
+namespace VatsenseVatsensePhp\Services;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\ValidateRawContract;
-use VatsenseVatsense\Validate\ValidateCheckParams;
-use VatsenseVatsense\Validate\ValidateCheckResponse;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\ValidateRawContract;
+use VatsenseVatsensePhp\Validate\ValidateCheckParams;
+use VatsenseVatsensePhp\Validate\ValidateCheckResponse;
 
 /**
  * VAT and EORI number validation.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class ValidateRawService implements ValidateRawContract
 {

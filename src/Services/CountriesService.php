@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services;
+namespace VatsenseVatsensePhp\Services;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Countries\CountryListProvincesResponse;
-use VatsenseVatsense\Countries\CountryListResponse;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\CountriesContract;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Countries\CountryListProvincesResponse;
+use VatsenseVatsensePhp\Countries\CountryListResponse;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\CountriesContract;
 
 /**
  * Country and province information.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class CountriesService implements CountriesContract
 {

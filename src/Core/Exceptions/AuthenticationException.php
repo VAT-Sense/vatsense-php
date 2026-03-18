@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsense\Core\Exceptions;
+namespace VatsenseVatsensePhp\Core\Exceptions;
 
 class AuthenticationException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsense Authentication Exception';
+    protected const DESC = 'VatsenseVatsensePhp Authentication Exception';
 }

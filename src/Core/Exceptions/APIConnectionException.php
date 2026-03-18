@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsense\Core\Exceptions;
+namespace VatsenseVatsensePhp\Core\Exceptions;
 
 class APIConnectionException extends APIException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsense API Connection Error';
+    protected const DESC = 'VatsenseVatsensePhp API Connection Error';
 }

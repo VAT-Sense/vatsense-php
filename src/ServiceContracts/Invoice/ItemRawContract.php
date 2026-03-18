@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\ServiceContracts\Invoice;
+namespace VatsenseVatsensePhp\ServiceContracts\Invoice;
 
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Invoice\InvoiceResponse;
-use VatsenseVatsense\Invoice\Item\ItemAddParams;
-use VatsenseVatsense\Invoice\Item\ItemDeleteParams;
-use VatsenseVatsense\Invoice\Item\ItemGetResponse;
-use VatsenseVatsense\Invoice\Item\ItemRetrieveParams;
-use VatsenseVatsense\Invoice\Item\ItemUpdateParams;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Invoice\InvoiceResponse;
+use VatsenseVatsensePhp\Invoice\Item\ItemAddParams;
+use VatsenseVatsensePhp\Invoice\Item\ItemDeleteParams;
+use VatsenseVatsensePhp\Invoice\Item\ItemGetResponse;
+use VatsenseVatsensePhp\Invoice\Item\ItemRetrieveParams;
+use VatsenseVatsensePhp\Invoice\Item\ItemUpdateParams;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 interface ItemRawContract
 {

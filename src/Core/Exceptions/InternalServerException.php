@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsense\Core\Exceptions;
+namespace VatsenseVatsensePhp\Core\Exceptions;
 
 class InternalServerException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsense Internal Server Exception';
+    protected const DESC = 'VatsenseVatsensePhp Internal Server Exception';
 }

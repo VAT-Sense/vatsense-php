@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice\Item;
+namespace VatsenseVatsensePhp\Invoice\Item;
 
-use VatsenseVatsense\Core\Attributes\Required;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Concerns\SdkParams;
-use VatsenseVatsense\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Core\Attributes\Required;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Concerns\SdkParams;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
 
 /**
  * Retrieve a specific line item from an invoice.
  *
- * @see VatsenseVatsense\Services\Invoice\ItemService::retrieve()
+ * @see VatsenseVatsensePhp\Services\Invoice\ItemService::retrieve()
  *
  * @phpstan-type ItemRetrieveParamsShape = array{invoiceID: string}
  */

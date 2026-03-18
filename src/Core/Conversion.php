@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core;
+namespace VatsenseVatsensePhp\Core;
 
-use VatsenseVatsense\Core\Conversion\CoerceState;
-use VatsenseVatsense\Core\Conversion\Contracts\Converter;
-use VatsenseVatsense\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsense\Core\Conversion\DumpState;
+use VatsenseVatsensePhp\Core\Conversion\CoerceState;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
+use VatsenseVatsensePhp\Core\Conversion\DumpState;
 
 /**
  * @internal

@@ -26,7 +26,7 @@ Parameters with a default value must be set by name.
 ```php
 <?php
 
-use VatsenseVatsense\Client;
+use VatsenseVatsensePhp\Client;
 
 $client = new Client(
   username: getenv('VAT_SENSE_USERNAME') ?: 'My Username',
@@ -47,14 +47,14 @@ However, builders are also provided `(new InvoiceBusinessInput)->withAddress("12
 
 ### Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `VatsenseVatsense\Core\Exceptions\APIException` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `VatsenseVatsensePhp\Core\Exceptions\APIException` will be thrown:
 
 ```php
 <?php
 
-use VatsenseVatsense\Core\Exceptions\APIConnectionException;
-use VatsenseVatsense\Core\Exceptions\RateLimitException;
-use VatsenseVatsense\Core\Exceptions\APIStatusException;
+use VatsenseVatsensePhp\Core\Exceptions\APIConnectionException;
+use VatsenseVatsensePhp\Core\Exceptions\RateLimitException;
+use VatsenseVatsensePhp\Core\Exceptions\APIStatusException;
 
 try {
   $rates = $client->rates->list();
@@ -96,7 +96,7 @@ You can use the `maxRetries` option to configure or disable this:
 ```php
 <?php
 
-use VatsenseVatsense\Client;
+use VatsenseVatsensePhp\Client;
 
 // Configure the default for all requests:
 $client = new Client(requestOptions: ['maxRetries' => 0]);

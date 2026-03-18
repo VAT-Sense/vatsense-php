@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Countries\Country;
+namespace VatsenseVatsensePhp\Countries\Country;
 
 enum Object_: string
 {

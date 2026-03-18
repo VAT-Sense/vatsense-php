@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsense\Core\Exceptions;
+namespace VatsenseVatsensePhp\Core\Exceptions;
 
 class ConflictException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsense Conflict Exception';
+    protected const DESC = 'VatsenseVatsensePhp Conflict Exception';
 }

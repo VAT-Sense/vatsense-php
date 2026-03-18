@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Concerns;
+namespace VatsenseVatsensePhp\Core\Concerns;
 
-use VatsenseVatsense\Core\Conversion;
-use VatsenseVatsense\Core\Conversion\DumpState;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Conversion;
+use VatsenseVatsensePhp\Core\Conversion\DumpState;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
  * @internal

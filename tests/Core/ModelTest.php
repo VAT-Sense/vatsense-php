@@ -5,10 +5,10 @@ namespace Tests\Core;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Attributes\Required;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Attributes\Required;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
 
 class Dog implements BaseModel
 {

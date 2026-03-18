@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Validate\ValidateCheckResponse;
+namespace VatsenseVatsensePhp\Validate\ValidateCheckResponse;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany;
-use VatsenseVatsense\Validate\ValidateCheckResponse\Data\Company\ValidationCompany;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany;
+use VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company\ValidationCompany;
 
 /**
- * @phpstan-import-type CompanyVariants from \VatsenseVatsense\Validate\ValidateCheckResponse\Data\Company
- * @phpstan-import-type CompanyShape from \VatsenseVatsense\Validate\ValidateCheckResponse\Data\Company
+ * @phpstan-import-type CompanyVariants from \VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company
+ * @phpstan-import-type CompanyShape from \VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company
  *
  * @phpstan-type DataShape = array{
  *   company?: CompanyShape|null,

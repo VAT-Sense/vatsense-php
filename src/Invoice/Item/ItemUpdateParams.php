@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice\Item;
+namespace VatsenseVatsensePhp\Invoice\Item;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Attributes\Required;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Concerns\SdkParams;
-use VatsenseVatsense\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Attributes\Required;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Concerns\SdkParams;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
 
 /**
  * Update a specific line item on an invoice.
  *
- * @see VatsenseVatsense\Services\Invoice\ItemService::update()
+ * @see VatsenseVatsensePhp\Services\Invoice\ItemService::update()
  *
  * @phpstan-type ItemUpdateParamsShape = array{
  *   invoiceID: string,

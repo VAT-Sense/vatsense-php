@@ -6,7 +6,7 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use VatsenseVatsense\Core\Util;
+use VatsenseVatsensePhp\Core\Util;
 
 /**
  * @internal

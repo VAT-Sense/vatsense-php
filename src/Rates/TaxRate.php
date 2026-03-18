@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Rates;
+namespace VatsenseVatsensePhp\Rates;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Rates\TaxRate\Object_;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Rates\TaxRate\Object_;
 
 /**
- * @phpstan-import-type TypesVariants from \VatsenseVatsense\Rates\TaxRate\Types
- * @phpstan-import-type TypesShape from \VatsenseVatsense\Rates\TaxRate\Types
+ * @phpstan-import-type TypesVariants from \VatsenseVatsensePhp\Rates\TaxRate\Types
+ * @phpstan-import-type TypesShape from \VatsenseVatsensePhp\Rates\TaxRate\Types
  *
  * @phpstan-type TaxRateShape = array{
  *   class?: string|null,

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Rates\RateCalculatePriceParams;
+namespace VatsenseVatsensePhp\Rates\RateCalculatePriceParams;
 
 /**
  * Whether the provided price is inclusive or exclusive of VAT.

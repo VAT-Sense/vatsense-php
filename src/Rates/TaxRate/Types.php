@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Rates\TaxRate;
+namespace VatsenseVatsensePhp\Rates\TaxRate;
 
-use VatsenseVatsense\Core\Concerns\SdkUnion;
-use VatsenseVatsense\Core\Conversion\Contracts\Converter;
-use VatsenseVatsense\Core\Conversion\Contracts\ConverterSource;
+use VatsenseVatsensePhp\Core\Concerns\SdkUnion;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
+use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
 
 /**
  * Comma-separated list of product types this rate applies to, or false if it applies generally.

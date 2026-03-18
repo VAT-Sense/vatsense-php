@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\ServiceContracts;
+namespace VatsenseVatsensePhp\ServiceContracts;
 
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Countries\CountryListParams;
-use VatsenseVatsense\Countries\CountryListProvincesParams;
-use VatsenseVatsense\Countries\CountryListProvincesResponse;
-use VatsenseVatsense\Countries\CountryListResponse;
-use VatsenseVatsense\RequestOptions;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Countries\CountryListParams;
+use VatsenseVatsensePhp\Countries\CountryListProvincesParams;
+use VatsenseVatsensePhp\Countries\CountryListProvincesResponse;
+use VatsenseVatsensePhp\Countries\CountryListResponse;
+use VatsenseVatsensePhp\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 interface CountriesRawContract
 {

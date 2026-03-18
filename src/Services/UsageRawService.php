@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services;
+namespace VatsenseVatsensePhp\Services;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\UsageRawContract;
-use VatsenseVatsense\Usage\UsageGetResponse;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\UsageRawContract;
+use VatsenseVatsensePhp\Usage\UsageGetResponse;
 
 /**
  * API usage statistics.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class UsageRawService implements UsageRawContract
 {

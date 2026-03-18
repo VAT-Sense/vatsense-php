@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Rates\Rate;
+namespace VatsenseVatsensePhp\Rates\Rate;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Contracts\BaseModel;
-use VatsenseVatsense\Rates\TaxRate\Object_;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Rates\TaxRate\Object_;
 
 /**
- * @phpstan-import-type TypesVariants from \VatsenseVatsense\Rates\TaxRate\Types
- * @phpstan-import-type TypesShape from \VatsenseVatsense\Rates\TaxRate\Types
+ * @phpstan-import-type TypesVariants from \VatsenseVatsensePhp\Rates\TaxRate\Types
+ * @phpstan-import-type TypesShape from \VatsenseVatsensePhp\Rates\TaxRate\Types
  *
  * @phpstan-type OtherShape = array{
  *   class?: string|null,
  *   description?: string|null,
- *   object?: null|\VatsenseVatsense\Rates\TaxRate\Object_|value-of<\VatsenseVatsense\Rates\TaxRate\Object_>,
+ *   object?: null|\VatsenseVatsensePhp\Rates\TaxRate\Object_|value-of<\VatsenseVatsensePhp\Rates\TaxRate\Object_>,
  *   rate?: float|null,
  *   types?: TypesShape|null,
  *   province?: string|null,

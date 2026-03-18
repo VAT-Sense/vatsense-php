@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Invoice\Invoice;
+namespace VatsenseVatsensePhp\Invoice\Invoice;
 
 enum TaxType: string
 {

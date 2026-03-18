@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services;
+namespace VatsenseVatsensePhp\Services;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Core\Util;
-use VatsenseVatsense\Countries\CountryListParams;
-use VatsenseVatsense\Countries\CountryListProvincesParams;
-use VatsenseVatsense\Countries\CountryListProvincesResponse;
-use VatsenseVatsense\Countries\CountryListResponse;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\CountriesRawContract;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Core\Util;
+use VatsenseVatsensePhp\Countries\CountryListParams;
+use VatsenseVatsensePhp\Countries\CountryListProvincesParams;
+use VatsenseVatsensePhp\Countries\CountryListProvincesResponse;
+use VatsenseVatsensePhp\Countries\CountryListResponse;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\CountriesRawContract;
 
 /**
  * Country and province information.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class CountriesRawService implements CountriesRawContract
 {

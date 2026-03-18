@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Rates;
+namespace VatsenseVatsensePhp\Rates;
 
-use VatsenseVatsense\Core\Attributes\Optional;
-use VatsenseVatsense\Core\Concerns\SdkModel;
-use VatsenseVatsense\Core\Concerns\SdkParams;
-use VatsenseVatsense\Core\Contracts\BaseModel;
+use VatsenseVatsensePhp\Core\Attributes\Optional;
+use VatsenseVatsensePhp\Core\Concerns\SdkModel;
+use VatsenseVatsensePhp\Core\Concerns\SdkParams;
+use VatsenseVatsensePhp\Core\Contracts\BaseModel;
 
 /**
  * Get detailed tax rate information for a location, including all applicable
  * rate classes (standard, reduced, zero, etc.).
  *
- * @see VatsenseVatsense\Services\RatesService::details()
+ * @see VatsenseVatsensePhp\Services\RatesService::details()
  *
  * @phpstan-type RateDetailsParamsShape = array{
  *   countryCode?: string|null,

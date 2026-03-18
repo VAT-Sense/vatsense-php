@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Core\Contracts;
+namespace VatsenseVatsensePhp\Core\Contracts;
 
 /**
- * @phpstan-import-type NormalizedRequest from \VatsenseVatsense\Core\BaseClient
+ * @phpstan-import-type NormalizedRequest from \VatsenseVatsensePhp\Core\BaseClient
  *
  * @internal
  *

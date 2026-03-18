@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsense\Services\Invoice;
+namespace VatsenseVatsensePhp\Services\Invoice;
 
-use VatsenseVatsense\Client;
-use VatsenseVatsense\Core\Contracts\BaseResponse;
-use VatsenseVatsense\Core\Exceptions\APIException;
-use VatsenseVatsense\Invoice\InvoiceResponse;
-use VatsenseVatsense\Invoice\Item\InvoiceItemInput;
-use VatsenseVatsense\Invoice\Item\ItemAddParams;
-use VatsenseVatsense\Invoice\Item\ItemDeleteParams;
-use VatsenseVatsense\Invoice\Item\ItemGetResponse;
-use VatsenseVatsense\Invoice\Item\ItemRetrieveParams;
-use VatsenseVatsense\Invoice\Item\ItemUpdateParams;
-use VatsenseVatsense\RequestOptions;
-use VatsenseVatsense\ServiceContracts\Invoice\ItemRawContract;
+use VatsenseVatsensePhp\Client;
+use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
+use VatsenseVatsensePhp\Core\Exceptions\APIException;
+use VatsenseVatsensePhp\Invoice\InvoiceResponse;
+use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
+use VatsenseVatsensePhp\Invoice\Item\ItemAddParams;
+use VatsenseVatsensePhp\Invoice\Item\ItemDeleteParams;
+use VatsenseVatsensePhp\Invoice\Item\ItemGetResponse;
+use VatsenseVatsensePhp\Invoice\Item\ItemRetrieveParams;
+use VatsenseVatsensePhp\Invoice\Item\ItemUpdateParams;
+use VatsenseVatsensePhp\RequestOptions;
+use VatsenseVatsensePhp\ServiceContracts\Invoice\ItemRawContract;
 
 /**
  * VAT-compliant invoice management.
  *
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsense\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type RequestOpts from \VatsenseVatsense\RequestOptions
+ * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
  */
 final class ItemRawService implements ItemRawContract
 {
