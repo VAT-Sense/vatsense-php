@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency\CurrencyConvertParams;
+namespace Vatsense\Currency\CurrencyConvertParams;
 
 /**
  * The 3-character target currency code. Must be either "GBP" or "EUR".

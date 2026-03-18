@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Services;
+namespace Vatsense\Services;
 
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\ServiceContracts\ValidateContract;
-use VatsenseVatsensePhp\Validate\ValidateCheckResponse;
+use Vatsense\Client;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Core\Util;
+use Vatsense\RequestOptions;
+use Vatsense\ServiceContracts\ValidateContract;
+use Vatsense\Validate\ValidateCheckResponse;
 
 /**
  * VAT and EORI number validation.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 final class ValidateService implements ValidateContract
 {

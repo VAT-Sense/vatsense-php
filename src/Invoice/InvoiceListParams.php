@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Invoice;
+namespace Vatsense\Invoice;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * Retrieve a paginated list of all invoices.
  *
- * @see VatsenseVatsensePhp\Services\InvoiceService::list()
+ * @see Vatsense\Services\InvoiceService::list()
  *
  * @phpstan-type InvoiceListParamsShape = array{
  *   limit?: int|null, offset?: int|null, search?: string|null

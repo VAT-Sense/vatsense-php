@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates;
+namespace Vatsense\Rates;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
- * @phpstan-import-type RateShape from \VatsenseVatsensePhp\Rates\Rate
+ * @phpstan-import-type RateShape from \Vatsense\Rates\Rate
  *
  * @phpstan-type RateListResponseShape = array{
  *   code?: int|null, data?: list<Rate|RateShape>|null, success?: bool|null

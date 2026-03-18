@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency;
+namespace Vatsense\Currency;
 
-use VatsenseVatsensePhp\Core\Attributes\Required;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Currency\CurrencyConvertParams\To;
+use Vatsense\Core\Attributes\Required;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Currency\CurrencyConvertParams\To;
 
 /**
  * Convert a foreign currency amount to either GBP or EUR using official
@@ -18,7 +18,7 @@ use VatsenseVatsensePhp\Currency\CurrencyConvertParams\To;
  * EUR rates are from the European Central Bank (updated around 16:00 CET
  * on working days).
  *
- * @see VatsenseVatsensePhp\Services\CurrencyService::convert()
+ * @see Vatsense\Services\CurrencyService::convert()
  *
  * @phpstan-type CurrencyConvertParamsShape = array{
  *   amount: string, from: string, to: To|value-of<To>

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core\Contracts;
+namespace Vatsense\Core\Contracts;
 
-use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
+use Vatsense\Core\Conversion\Contracts\ConverterSource;
 
 /**
  * @internal

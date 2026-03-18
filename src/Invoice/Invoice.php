@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Invoice;
+namespace Vatsense\Invoice;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Invoice\Invoice\Business;
-use VatsenseVatsensePhp\Invoice\Invoice\Customer;
-use VatsenseVatsensePhp\Invoice\Invoice\Object_;
-use VatsenseVatsensePhp\Invoice\Invoice\TaxType;
-use VatsenseVatsensePhp\Invoice\Invoice\Totals;
-use VatsenseVatsensePhp\Invoice\Invoice\Type;
-use VatsenseVatsensePhp\Invoice\Item\InvoiceItem;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Invoice\Invoice\Business;
+use Vatsense\Invoice\Invoice\Customer;
+use Vatsense\Invoice\Invoice\Object_;
+use Vatsense\Invoice\Invoice\TaxType;
+use Vatsense\Invoice\Invoice\Totals;
+use Vatsense\Invoice\Invoice\Type;
+use Vatsense\Invoice\Item\InvoiceItem;
 
 /**
- * @phpstan-import-type BusinessShape from \VatsenseVatsensePhp\Invoice\Invoice\Business
- * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsensePhp\Invoice\InvoiceConversionInput
- * @phpstan-import-type CustomerShape from \VatsenseVatsensePhp\Invoice\Invoice\Customer
- * @phpstan-import-type InvoiceItemShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItem
- * @phpstan-import-type TotalsShape from \VatsenseVatsensePhp\Invoice\Invoice\Totals
+ * @phpstan-import-type BusinessShape from \Vatsense\Invoice\Invoice\Business
+ * @phpstan-import-type InvoiceConversionInputShape from \Vatsense\Invoice\InvoiceConversionInput
+ * @phpstan-import-type CustomerShape from \Vatsense\Invoice\Invoice\Customer
+ * @phpstan-import-type InvoiceItemShape from \Vatsense\Invoice\Item\InvoiceItem
+ * @phpstan-import-type TotalsShape from \Vatsense\Invoice\Invoice\Totals
  *
  * @phpstan-type InvoiceShape = array{
  *   id?: string|null,

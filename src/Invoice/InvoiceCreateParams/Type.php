@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Invoice\InvoiceCreateParams;
+namespace Vatsense\Invoice\InvoiceCreateParams;
 
 /**
  * The type of invoice.

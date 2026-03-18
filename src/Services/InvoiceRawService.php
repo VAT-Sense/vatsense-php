@@ -2,34 +2,34 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Services;
+namespace Vatsense\Services;
 
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Invoice\InvoiceBusinessInput;
-use VatsenseVatsensePhp\Invoice\InvoiceConversionInput;
-use VatsenseVatsensePhp\Invoice\InvoiceCreateParams;
-use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\TaxType;
-use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\Type;
-use VatsenseVatsensePhp\Invoice\InvoiceCustomerInput;
-use VatsenseVatsensePhp\Invoice\InvoiceDeleteResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceListParams;
-use VatsenseVatsensePhp\Invoice\InvoiceListResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceUpdateParams;
-use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\ServiceContracts\InvoiceRawContract;
+use Vatsense\Client;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Invoice\InvoiceBusinessInput;
+use Vatsense\Invoice\InvoiceConversionInput;
+use Vatsense\Invoice\InvoiceCreateParams;
+use Vatsense\Invoice\InvoiceCreateParams\TaxType;
+use Vatsense\Invoice\InvoiceCreateParams\Type;
+use Vatsense\Invoice\InvoiceCustomerInput;
+use Vatsense\Invoice\InvoiceDeleteResponse;
+use Vatsense\Invoice\InvoiceListParams;
+use Vatsense\Invoice\InvoiceListResponse;
+use Vatsense\Invoice\InvoiceResponse;
+use Vatsense\Invoice\InvoiceUpdateParams;
+use Vatsense\Invoice\Item\InvoiceItemInput;
+use Vatsense\RequestOptions;
+use Vatsense\ServiceContracts\InvoiceRawContract;
 
 /**
  * VAT-compliant invoice management.
  *
- * @phpstan-import-type InvoiceBusinessInputShape from \VatsenseVatsensePhp\Invoice\InvoiceBusinessInput
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsensePhp\Invoice\InvoiceConversionInput
- * @phpstan-import-type InvoiceCustomerInputShape from \VatsenseVatsensePhp\Invoice\InvoiceCustomerInput
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type InvoiceBusinessInputShape from \Vatsense\Invoice\InvoiceBusinessInput
+ * @phpstan-import-type InvoiceItemInputShape from \Vatsense\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type InvoiceConversionInputShape from \Vatsense\Invoice\InvoiceConversionInput
+ * @phpstan-import-type InvoiceCustomerInputShape from \Vatsense\Invoice\InvoiceCustomerInput
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 final class InvoiceRawService implements InvoiceRawContract
 {

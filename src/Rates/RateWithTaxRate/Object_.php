@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates\RateWithTaxRate;
+namespace Vatsense\Rates\RateWithTaxRate;
 
 enum Object_: string
 {

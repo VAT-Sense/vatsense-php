@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency\CurrencyConvertResponse\Data;
+namespace Vatsense\Currency\CurrencyConvertResponse\Data;
 
 enum Object_: string
 {

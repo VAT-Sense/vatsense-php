@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates;
+namespace Vatsense\Rates;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Rates\RateCalculatePriceResponse\Data;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Rates\RateCalculatePriceResponse\Data;
 
 /**
- * @phpstan-import-type DataShape from \VatsenseVatsensePhp\Rates\RateCalculatePriceResponse\Data
+ * @phpstan-import-type DataShape from \Vatsense\Rates\RateCalculatePriceResponse\Data
  *
  * @phpstan-type RateCalculatePriceResponseShape = array{
  *   code?: int|null, data?: null|Data|DataShape, success?: bool|null

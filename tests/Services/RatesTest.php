@@ -6,12 +6,12 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Rates\FindRate;
-use VatsenseVatsensePhp\Rates\RateCalculatePriceResponse;
-use VatsenseVatsensePhp\Rates\RateListResponse;
-use VatsenseVatsensePhp\Rates\RateListTypesResponse;
+use Vatsense\Client;
+use Vatsense\Core\Util;
+use Vatsense\Rates\FindRate;
+use Vatsense\Rates\RateCalculatePriceResponse;
+use Vatsense\Rates\RateListResponse;
+use Vatsense\Rates\RateListTypesResponse;
 
 /**
  * @internal

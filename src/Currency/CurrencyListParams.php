@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency;
+namespace Vatsense\Currency;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Currency\CurrencyListParams\To;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Currency\CurrencyListParams\To;
 
 /**
  * Returns a list of all currency conversion rates sourced from HMRC (GBP)
@@ -16,7 +16,7 @@ use VatsenseVatsensePhp\Currency\CurrencyListParams\To;
  *
  * You can optionally filter by source and target currency.
  *
- * @see VatsenseVatsensePhp\Services\CurrencyService::list()
+ * @see Vatsense\Services\CurrencyService::list()
  *
  * @phpstan-type CurrencyListParamsShape = array{
  *   from?: string|null, to?: null|To|value-of<To>

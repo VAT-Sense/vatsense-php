@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency;
+namespace Vatsense\Currency;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
- * @phpstan-import-type VatPriceShape from \VatsenseVatsensePhp\Currency\VatPrice
+ * @phpstan-import-type VatPriceShape from \Vatsense\Currency\VatPrice
  *
  * @phpstan-type CurrencyCalculateVatPriceResponseShape = array{
  *   code?: int|null, data?: null|VatPrice|VatPriceShape, success?: bool|null

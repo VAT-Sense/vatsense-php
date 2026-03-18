@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates;
+namespace Vatsense\Rates;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Attributes\Required;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Rates\RateCalculatePriceParams\TaxType;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Attributes\Required;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Rates\RateCalculatePriceParams\TaxType;
 
 /**
  * Combines the functionality of the "Find a tax rate" and "VAT price
@@ -17,7 +17,7 @@ use VatsenseVatsensePhp\Rates\RateCalculatePriceParams\TaxType;
  * applicable VAT rate. Requires both a location (country_code or ip_address)
  * and a price to calculate.
  *
- * @see VatsenseVatsensePhp\Services\RatesService::calculatePrice()
+ * @see Vatsense\Services\RatesService::calculatePrice()
  *
  * @phpstan-type RateCalculatePriceParamsShape = array{
  *   price: string,

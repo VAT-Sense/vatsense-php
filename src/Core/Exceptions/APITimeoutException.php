@@ -1,13 +1,13 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 use Psr\Http\Message\RequestInterface;
 
 class APITimeoutException extends APIConnectionException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp API Timeout Exception';
+    protected const DESC = 'Vatsense API Timeout Exception';
 
     public function __construct(
         RequestInterface $request,

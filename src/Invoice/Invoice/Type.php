@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Invoice\Invoice;
+namespace Vatsense\Invoice\Invoice;
 
 enum Type: string
 {

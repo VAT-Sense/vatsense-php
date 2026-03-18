@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Services;
+namespace Vatsense\Services;
 
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\ServiceContracts\UsageContract;
-use VatsenseVatsensePhp\Usage\UsageGetResponse;
+use Vatsense\Client;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\RequestOptions;
+use Vatsense\ServiceContracts\UsageContract;
+use Vatsense\Usage\UsageGetResponse;
 
 /**
  * API usage statistics.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 final class UsageService implements UsageContract
 {

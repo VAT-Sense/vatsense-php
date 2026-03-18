@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core;
+namespace Vatsense\Core;
 
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
-use VatsenseVatsensePhp\Core\Contracts\BasePage;
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Contracts\BaseStream;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsensePhp\Core\Exceptions\APIConnectionException;
-use VatsenseVatsensePhp\Core\Exceptions\APIStatusException;
-use VatsenseVatsensePhp\Core\Implementation\RawResponse;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Core\Contracts\BasePage;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Contracts\BaseStream;
+use Vatsense\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Conversion\Contracts\ConverterSource;
+use Vatsense\Core\Exceptions\APIConnectionException;
+use Vatsense\Core\Exceptions\APIStatusException;
+use Vatsense\Core\Implementation\RawResponse;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  *
  * @phpstan-type NormalizedRequest = array{
  *   method: string,

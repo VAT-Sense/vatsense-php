@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core\Concerns;
+namespace Vatsense\Core\Concerns;
 
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
-use VatsenseVatsensePhp\Core\Conversion\EnumOf;
+use Vatsense\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Conversion\EnumOf;
 
 /**
  * @internal

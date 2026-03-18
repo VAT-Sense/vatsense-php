@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates;
+namespace Vatsense\Rates;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Rates\Rate\Object_;
-use VatsenseVatsensePhp\Rates\Rate\Other;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Rates\Rate\Object_;
+use Vatsense\Rates\Rate\Other;
 
 /**
- * @phpstan-import-type OtherShape from \VatsenseVatsensePhp\Rates\Rate\Other
- * @phpstan-import-type TaxRateShape from \VatsenseVatsensePhp\Rates\TaxRate
+ * @phpstan-import-type OtherShape from \Vatsense\Rates\Rate\Other
+ * @phpstan-import-type TaxRateShape from \Vatsense\Rates\TaxRate
  *
  * @phpstan-type RateShape = array{
  *   countryCode?: string|null,
