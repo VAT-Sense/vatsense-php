@@ -27,7 +27,7 @@
     "sort-packages": true
   },
   "description": "Vat Sense PHP SDK",
-  "name": "placeholder/placeholder",
+  "name": "vatsense/vatsense-php",
   "require": {
     "php": "^8.1",
     "php-http/discovery": "^1",
