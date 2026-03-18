@@ -1,11 +1,11 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class APIException extends VatsenseVatsensePhpException
+class APIException extends VatsenseException
 {
     public ?int $status = null;
 

@@ -1,20 +1,20 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Implementation;
+namespace Vatsense\Core\Implementation;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use VatsenseVatsensePhp\Core\BaseClient;
-use VatsenseVatsensePhp\Core\Concerns\ResponseProxy;
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Conversion;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Core\BaseClient;
+use Vatsense\Core\Concerns\ResponseProxy;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Conversion;
+use Vatsense\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Conversion\Contracts\ConverterSource;
+use Vatsense\Core\Util;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type NormalizedRequest from \VatsenseVatsensePhp\Core\BaseClient
+ * @phpstan-import-type NormalizedRequest from \Vatsense\Core\BaseClient
  *
  * @internal
  *

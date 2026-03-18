@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core\Conversion;
+namespace Vatsense\Core\Conversion;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Attributes\Required;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Core\Conversion;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Attributes\Required;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Core\Conversion;
+use Vatsense\Core\Conversion\Contracts\Converter;
 
 /**
  * @internal

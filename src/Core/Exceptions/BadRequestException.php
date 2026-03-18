@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 class BadRequestException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp Bad Request Exception';
+    protected const DESC = 'Vatsense Bad Request Exception';
 }

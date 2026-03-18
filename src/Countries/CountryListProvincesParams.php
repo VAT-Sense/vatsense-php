@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Countries;
+namespace Vatsense\Countries;
 
-use VatsenseVatsensePhp\Core\Attributes\Required;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Required;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * Retrieve a list of all provinces within a given country.
  *
- * @see VatsenseVatsensePhp\Services\CountriesService::listProvinces()
+ * @see Vatsense\Services\CountriesService::listProvinces()
  *
  * @phpstan-type CountryListProvincesParamsShape = array{countryCode: string}
  */

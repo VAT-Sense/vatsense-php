@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 class PermissionDeniedException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp Permission Denied Exception';
+    protected const DESC = 'Vatsense Permission Denied Exception';
 }

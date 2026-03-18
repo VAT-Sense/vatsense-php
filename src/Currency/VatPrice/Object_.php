@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency\VatPrice;
+namespace Vatsense\Currency\VatPrice;
 
 enum Object_: string
 {

@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\ServiceContracts;
+namespace Vatsense\ServiceContracts;
 
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Invoice\InvoiceBusinessInput;
-use VatsenseVatsensePhp\Invoice\InvoiceConversionInput;
-use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\TaxType;
-use VatsenseVatsensePhp\Invoice\InvoiceCreateParams\Type;
-use VatsenseVatsensePhp\Invoice\InvoiceCustomerInput;
-use VatsenseVatsensePhp\Invoice\InvoiceDeleteResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceListResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceResponse;
-use VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Invoice\InvoiceBusinessInput;
+use Vatsense\Invoice\InvoiceConversionInput;
+use Vatsense\Invoice\InvoiceCreateParams\TaxType;
+use Vatsense\Invoice\InvoiceCreateParams\Type;
+use Vatsense\Invoice\InvoiceCustomerInput;
+use Vatsense\Invoice\InvoiceDeleteResponse;
+use Vatsense\Invoice\InvoiceListResponse;
+use Vatsense\Invoice\InvoiceResponse;
+use Vatsense\Invoice\Item\InvoiceItemInput;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type InvoiceBusinessInputShape from \VatsenseVatsensePhp\Invoice\InvoiceBusinessInput
- * @phpstan-import-type InvoiceItemInputShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItemInput
- * @phpstan-import-type InvoiceConversionInputShape from \VatsenseVatsensePhp\Invoice\InvoiceConversionInput
- * @phpstan-import-type InvoiceCustomerInputShape from \VatsenseVatsensePhp\Invoice\InvoiceCustomerInput
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type InvoiceBusinessInputShape from \Vatsense\Invoice\InvoiceBusinessInput
+ * @phpstan-import-type InvoiceItemInputShape from \Vatsense\Invoice\Item\InvoiceItemInput
+ * @phpstan-import-type InvoiceConversionInputShape from \Vatsense\Invoice\InvoiceConversionInput
+ * @phpstan-import-type InvoiceCustomerInputShape from \Vatsense\Invoice\InvoiceCustomerInput
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 interface InvoiceContract
 {
@@ -101,8 +101,8 @@ interface InvoiceContract
      * @param string $notes any additional notes for the invoice
      * @param int $padInvoiceNumber pad the auto-generated invoice number with leading zeros to this length
      * @param string $serial A serial prepended to the auto-generated invoice number. Each unique serial has its own auto-increment range.
-     * @param \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\TaxType|value-of<\VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\TaxType> $taxType whether item prices include or exclude VAT
-     * @param \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\Type|value-of<\VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\Type> $type the type of invoice
+     * @param \Vatsense\Invoice\InvoiceUpdateParams\TaxType|value-of<\Vatsense\Invoice\InvoiceUpdateParams\TaxType> $taxType whether item prices include or exclude VAT
+     * @param \Vatsense\Invoice\InvoiceUpdateParams\Type|value-of<\Vatsense\Invoice\InvoiceUpdateParams\Type> $type the type of invoice
      * @param bool $zeroRated whether the invoice has been zero-rated
      * @param RequestOpts|null $requestOptions
      *
@@ -124,8 +124,8 @@ interface InvoiceContract
         ?string $notes = null,
         ?int $padInvoiceNumber = null,
         ?string $serial = null,
-        \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\TaxType|string $taxType = 'incl',
-        \VatsenseVatsensePhp\Invoice\InvoiceUpdateParams\Type|string $type = 'sale',
+        \Vatsense\Invoice\InvoiceUpdateParams\TaxType|string $taxType = 'incl',
+        \Vatsense\Invoice\InvoiceUpdateParams\Type|string $type = 'sale',
         bool $zeroRated = false,
         RequestOptions|array|null $requestOptions = null,
     ): InvoiceResponse;

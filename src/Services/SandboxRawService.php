@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Services;
+namespace Vatsense\Services;
 
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\Sandbox\SandboxGenerateKeyResponse;
-use VatsenseVatsensePhp\ServiceContracts\SandboxRawContract;
+use Vatsense\Client;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\RequestOptions;
+use Vatsense\Sandbox\SandboxGenerateKeyResponse;
+use Vatsense\ServiceContracts\SandboxRawContract;
 
 /**
  * Temporary sandbox API keys for testing.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 final class SandboxRawService implements SandboxRawContract
 {

@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Services;
+namespace Vatsense\Services;
 
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams\TaxType;
-use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceResponse;
-use VatsenseVatsensePhp\Currency\CurrencyConvertResponse;
-use VatsenseVatsensePhp\Currency\CurrencyListParams\To;
-use VatsenseVatsensePhp\Currency\CurrencyListResponse;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\ServiceContracts\CurrencyContract;
+use Vatsense\Client;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Core\Util;
+use Vatsense\Currency\CurrencyCalculateVatPriceParams\TaxType;
+use Vatsense\Currency\CurrencyCalculateVatPriceResponse;
+use Vatsense\Currency\CurrencyConvertResponse;
+use Vatsense\Currency\CurrencyListParams\To;
+use Vatsense\Currency\CurrencyListResponse;
+use Vatsense\RequestOptions;
+use Vatsense\ServiceContracts\CurrencyContract;
 
 /**
  * Currency exchange rates and conversion.
  *
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 final class CurrencyService implements CurrencyContract
 {
@@ -105,7 +105,7 @@ final class CurrencyService implements CurrencyContract
      *
      * @param string $amount The amount to convert. Must be a string with exactly 2 decimal places (e.g. "39.99").
      * @param string $from The 3-character source currency code (e.g. "USD", "CAD").
-     * @param \VatsenseVatsensePhp\Currency\CurrencyConvertParams\To|value-of<\VatsenseVatsensePhp\Currency\CurrencyConvertParams\To> $to The 3-character target currency code. Must be either "GBP" or "EUR".
+     * @param \Vatsense\Currency\CurrencyConvertParams\To|value-of<\Vatsense\Currency\CurrencyConvertParams\To> $to The 3-character target currency code. Must be either "GBP" or "EUR".
      * @param RequestOpts|null $requestOptions
      *
      * @throws APIException
@@ -113,7 +113,7 @@ final class CurrencyService implements CurrencyContract
     public function convert(
         string $amount,
         string $from,
-        \VatsenseVatsensePhp\Currency\CurrencyConvertParams\To|string $to,
+        \Vatsense\Currency\CurrencyConvertParams\To|string $to,
         RequestOptions|array|null $requestOptions = null,
     ): CurrencyConvertResponse {
         $params = Util::removeNulls(

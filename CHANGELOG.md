@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2026-03-18)
+
+Full Changelog: [v0.1.1...v0.2.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.1.1...v0.2.0)
+
+### Features
+
+* **api:** api update ([71e0674](https://github.com/VAT-Sense/vatsense-php/commit/71e067415a37bf37f4bc0a0e7fbcd5798bd22a08))
+
 ## 0.1.1 (2026-03-18)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.1.0...v0.1.1)

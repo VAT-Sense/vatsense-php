@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Invoice\Item;
+namespace Vatsense\Invoice\Item;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
- * @phpstan-import-type InvoiceItemShape from \VatsenseVatsensePhp\Invoice\Item\InvoiceItem
+ * @phpstan-import-type InvoiceItemShape from \Vatsense\Invoice\Item\InvoiceItem
  *
  * @phpstan-type ItemGetResponseShape = array{
  *   code?: int|null, data?: null|InvoiceItem|InvoiceItemShape, success?: bool|null

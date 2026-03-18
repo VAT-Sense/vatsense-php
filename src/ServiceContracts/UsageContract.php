@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\ServiceContracts;
+namespace Vatsense\ServiceContracts;
 
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\Usage\UsageGetResponse;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\RequestOptions;
+use Vatsense\Usage\UsageGetResponse;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 interface UsageContract
 {

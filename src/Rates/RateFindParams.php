@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates;
+namespace Vatsense\Rates;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * A handy endpoint for finding a rate that applies to a particular country
@@ -19,7 +19,7 @@ use VatsenseVatsensePhp\Core\Contracts\BaseModel;
  * If the country is not subject to VAT/GST then an error response will be
  * returned, indicating no tax applies.
  *
- * @see VatsenseVatsensePhp\Services\RatesService::find()
+ * @see Vatsense\Services\RatesService::find()
  *
  * @phpstan-type RateFindParamsShape = array{
  *   countryCode?: string|null,

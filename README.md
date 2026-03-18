@@ -13,7 +13,7 @@ The REST API documentation can be found on [vatsense.com](https://vatsense.com).
 <!-- x-release-please-start-version -->
 
 ```
-composer require "vatsense/vatsense-php 0.1.1"
+composer require "vatsense/vatsense-php 0.2.0"
 ```
 
 <!-- x-release-please-end -->
@@ -26,7 +26,7 @@ Parameters with a default value must be set by name.
 ```php
 <?php
 
-use VatsenseVatsensePhp\Client;
+use Vatsense\Client;
 
 $client = new Client(
   username: getenv('VAT_SENSE_USERNAME') ?: 'My Username',
@@ -47,14 +47,14 @@ However, builders are also provided `(new InvoiceBusinessInput)->withAddress("12
 
 ### Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `VatsenseVatsensePhp\Core\Exceptions\APIException` will be thrown:
+When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Vatsense\Core\Exceptions\APIException` will be thrown:
 
 ```php
 <?php
 
-use VatsenseVatsensePhp\Core\Exceptions\APIConnectionException;
-use VatsenseVatsensePhp\Core\Exceptions\RateLimitException;
-use VatsenseVatsensePhp\Core\Exceptions\APIStatusException;
+use Vatsense\Core\Exceptions\APIConnectionException;
+use Vatsense\Core\Exceptions\RateLimitException;
+use Vatsense\Core\Exceptions\APIStatusException;
 
 try {
   $rates = $client->rates->list();
@@ -96,7 +96,7 @@ You can use the `maxRetries` option to configure or disable this:
 ```php
 <?php
 
-use VatsenseVatsensePhp\Client;
+use Vatsense\Client;
 
 // Configure the default for all requests:
 $client = new Client(requestOptions: ['maxRetries' => 0]);

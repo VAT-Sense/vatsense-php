@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Countries;
+namespace Vatsense\Countries;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * Returns a list of all countries, including whether they are subject to
@@ -16,7 +16,7 @@ use VatsenseVatsensePhp\Core\Contracts\BaseModel;
  *
  * You can optionally filter by country code or IP address.
  *
- * @see VatsenseVatsensePhp\Services\CountriesService::list()
+ * @see Vatsense\Services\CountriesService::list()
  *
  * @phpstan-type CountryListParamsShape = array{
  *   countryCode?: string|null, ipAddress?: string|null

@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 class NotFoundException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp Not Found Exception';
+    protected const DESC = 'Vatsense Not Found Exception';
 }

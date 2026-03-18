@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 class RateLimitException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp Rate Limit Exception';
+    protected const DESC = 'Vatsense Rate Limit Exception';
 }

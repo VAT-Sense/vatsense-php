@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core\Concerns;
+namespace Vatsense\Core\Concerns;
 
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsensePhp\Core\Exceptions\APIStatusException;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Client;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Conversion\Contracts\ConverterSource;
+use Vatsense\Core\Exceptions\APIStatusException;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type NormalizedRequest from \VatsenseVatsensePhp\Core\BaseClient
+ * @phpstan-import-type NormalizedRequest from \Vatsense\Core\BaseClient
  *
  * @internal
  *

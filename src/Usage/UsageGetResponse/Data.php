@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Usage\UsageGetResponse;
+namespace Vatsense\Usage\UsageGetResponse;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Usage\UsageGetResponse\Data\Requests;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Usage\UsageGetResponse\Data\Requests;
 
 /**
- * @phpstan-import-type RequestsShape from \VatsenseVatsensePhp\Usage\UsageGetResponse\Data\Requests
+ * @phpstan-import-type RequestsShape from \Vatsense\Usage\UsageGetResponse\Data\Requests
  *
  * @phpstan-type DataShape = array{requests?: null|Requests|RequestsShape}
  */

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Countries\CountryListProvincesResponse;
+namespace Vatsense\Countries\CountryListProvincesResponse;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Countries\CountryListProvincesResponse\Data\Object_;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Countries\CountryListProvincesResponse\Data\Object_;
 
 /**
  * @phpstan-type DataShape = array{

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data;
+namespace Vatsense\Validate\ValidateCheckResponse\Data;
 
-use VatsenseVatsensePhp\Core\Concerns\SdkUnion;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
-use VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany;
-use VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company\ValidationCompany;
+use Vatsense\Core\Concerns\SdkUnion;
+use Vatsense\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Conversion\Contracts\ConverterSource;
+use Vatsense\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany;
+use Vatsense\Validate\ValidateCheckResponse\Data\Company\ValidationCompany;
 
 /**
- * @phpstan-import-type ValidationCompanyShape from \VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company\ValidationCompany
- * @phpstan-import-type EoriValidationCompanyShape from \VatsenseVatsensePhp\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany
+ * @phpstan-import-type ValidationCompanyShape from \Vatsense\Validate\ValidateCheckResponse\Data\Company\ValidationCompany
+ * @phpstan-import-type EoriValidationCompanyShape from \Vatsense\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany
  *
  * @phpstan-type CompanyVariants = ValidationCompany|EoriValidationCompany
  * @phpstan-type CompanyShape = CompanyVariants|ValidationCompanyShape|EoriValidationCompanyShape

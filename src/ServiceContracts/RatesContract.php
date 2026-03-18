@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\ServiceContracts;
+namespace Vatsense\ServiceContracts;
 
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Rates\FindRate;
-use VatsenseVatsensePhp\Rates\RateCalculatePriceParams\TaxType;
-use VatsenseVatsensePhp\Rates\RateCalculatePriceResponse;
-use VatsenseVatsensePhp\Rates\RateListResponse;
-use VatsenseVatsensePhp\Rates\RateListTypesResponse;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Rates\FindRate;
+use Vatsense\Rates\RateCalculatePriceParams\TaxType;
+use Vatsense\Rates\RateCalculatePriceResponse;
+use Vatsense\Rates\RateListResponse;
+use Vatsense\Rates\RateListTypesResponse;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 interface RatesContract
 {

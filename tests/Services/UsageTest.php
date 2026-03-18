@@ -6,9 +6,9 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Usage\UsageGetResponse;
+use Vatsense\Client;
+use Vatsense\Core\Util;
+use Vatsense\Usage\UsageGetResponse;
 
 /**
  * @internal

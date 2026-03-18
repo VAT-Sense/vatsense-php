@@ -1,9 +1,9 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 class UnprocessableEntityException extends APIStatusException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp Unprocessable Entity Exception';
+    protected const DESC = 'Vatsense Unprocessable Entity Exception';
 }

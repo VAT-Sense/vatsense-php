@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\ServiceContracts;
+namespace Vatsense\ServiceContracts;
 
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\RequestOptions;
-use VatsenseVatsensePhp\Sandbox\SandboxGenerateKeyResponse;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\RequestOptions;
+use Vatsense\Sandbox\SandboxGenerateKeyResponse;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 interface SandboxRawContract
 {

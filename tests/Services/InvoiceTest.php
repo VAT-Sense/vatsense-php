@@ -6,11 +6,11 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Invoice\InvoiceDeleteResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceListResponse;
-use VatsenseVatsensePhp\Invoice\InvoiceResponse;
+use Vatsense\Client;
+use Vatsense\Core\Util;
+use Vatsense\Invoice\InvoiceDeleteResponse;
+use Vatsense\Invoice\InvoiceListResponse;
+use Vatsense\Invoice\InvoiceResponse;
 
 /**
  * @internal

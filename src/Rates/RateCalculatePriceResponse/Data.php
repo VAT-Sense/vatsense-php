@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates\RateCalculatePriceResponse;
+namespace Vatsense\Rates\RateCalculatePriceResponse;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Currency\VatPrice;
-use VatsenseVatsensePhp\Rates\RateCalculatePriceResponse\Data\Object_;
-use VatsenseVatsensePhp\Rates\TaxRate;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Currency\VatPrice;
+use Vatsense\Rates\RateCalculatePriceResponse\Data\Object_;
+use Vatsense\Rates\TaxRate;
 
 /**
- * @phpstan-import-type TaxRateShape from \VatsenseVatsensePhp\Rates\TaxRate
- * @phpstan-import-type VatPriceShape from \VatsenseVatsensePhp\Currency\VatPrice
+ * @phpstan-import-type TaxRateShape from \Vatsense\Rates\TaxRate
+ * @phpstan-import-type VatPriceShape from \Vatsense\Currency\VatPrice
  *
  * @phpstan-type DataShape = array{
  *   countryCode?: string|null,
