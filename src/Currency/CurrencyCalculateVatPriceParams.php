@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency;
+namespace Vatsense\Currency;
 
-use VatsenseVatsensePhp\Core\Attributes\Required;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams\TaxType;
+use Vatsense\Core\Attributes\Required;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Currency\CurrencyCalculateVatPriceParams\TaxType;
 
 /**
  * Calculate the inclusive and exclusive VAT price on a given amount and
  * VAT rate. This is a standalone calculation that does not look up rates
  * by country.
  *
- * @see VatsenseVatsensePhp\Services\CurrencyService::calculateVatPrice()
+ * @see Vatsense\Services\CurrencyService::calculateVatPrice()
  *
  * @phpstan-type CurrencyCalculateVatPriceParamsShape = array{
  *   price: string, taxType: TaxType|value-of<TaxType>, vatRate: float

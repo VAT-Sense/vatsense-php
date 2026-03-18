@@ -6,10 +6,10 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Invoice\InvoiceResponse;
-use VatsenseVatsensePhp\Invoice\Item\ItemGetResponse;
+use Vatsense\Client;
+use Vatsense\Core\Util;
+use Vatsense\Invoice\InvoiceResponse;
+use Vatsense\Invoice\Item\ItemGetResponse;
 
 /**
  * @internal

@@ -1,15 +1,15 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use VatsenseVatsensePhp\Core\Util;
+use Vatsense\Core\Util;
 
 class APIStatusException extends APIException
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp API Status Error';
+    protected const DESC = 'Vatsense API Status Error';
 
     public ?int $status;
 

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp;
+namespace Vatsense;
 
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\UriFactoryInterface;
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Attributes\Required as Property;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Attributes\Required as Property;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * @phpstan-type RequestOptionShape = array{

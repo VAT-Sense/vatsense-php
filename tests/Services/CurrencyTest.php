@@ -6,11 +6,11 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceResponse;
-use VatsenseVatsensePhp\Currency\CurrencyConvertResponse;
-use VatsenseVatsensePhp\Currency\CurrencyListResponse;
+use Vatsense\Client;
+use Vatsense\Core\Util;
+use Vatsense\Currency\CurrencyCalculateVatPriceResponse;
+use Vatsense\Currency\CurrencyConvertResponse;
+use Vatsense\Currency\CurrencyListResponse;
 
 /**
  * @internal

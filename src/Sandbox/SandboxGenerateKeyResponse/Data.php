@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Sandbox\SandboxGenerateKeyResponse;
+namespace Vatsense\Sandbox\SandboxGenerateKeyResponse;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * @phpstan-type DataShape = array{

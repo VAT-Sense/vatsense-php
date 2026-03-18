@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Validate;
+namespace Vatsense\Validate;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * Check whether a given VAT number or EORI number is valid against live
@@ -23,7 +23,7 @@ use VatsenseVatsensePhp\Core\Contracts\BaseModel;
  *
  * Provide either `vat_number` or `eori_number`, but not both.
  *
- * @see VatsenseVatsensePhp\Services\ValidateService::check()
+ * @see Vatsense\Services\ValidateService::check()
  *
  * @phpstan-type ValidateCheckParamsShape = array{
  *   eoriNumber?: string|null,

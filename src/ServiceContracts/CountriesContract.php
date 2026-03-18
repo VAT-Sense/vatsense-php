@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\ServiceContracts;
+namespace Vatsense\ServiceContracts;
 
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Countries\CountryListProvincesResponse;
-use VatsenseVatsensePhp\Countries\CountryListResponse;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Countries\CountryListProvincesResponse;
+use Vatsense\Countries\CountryListResponse;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 interface CountriesContract
 {

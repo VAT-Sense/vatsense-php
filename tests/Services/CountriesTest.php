@@ -6,10 +6,10 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Tests\UnsupportedMockTests;
-use VatsenseVatsensePhp\Client;
-use VatsenseVatsensePhp\Core\Util;
-use VatsenseVatsensePhp\Countries\CountryListProvincesResponse;
-use VatsenseVatsensePhp\Countries\CountryListResponse;
+use Vatsense\Client;
+use Vatsense\Core\Util;
+use Vatsense\Countries\CountryListProvincesResponse;
+use Vatsense\Countries\CountryListResponse;
 
 /**
  * @internal

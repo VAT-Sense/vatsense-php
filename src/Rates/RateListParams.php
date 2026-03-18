@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Rates;
+namespace Vatsense\Rates;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Concerns\SdkParams;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Concerns\SdkParams;
+use Vatsense\Core\Contracts\BaseModel;
 
 /**
  * Returns a list of VAT/GST rates for all countries, sorted alphabetically
@@ -16,7 +16,7 @@ use VatsenseVatsensePhp\Core\Contracts\BaseModel;
  *
  * You can optionally filter by country code, IP address, or EU membership.
  *
- * @see VatsenseVatsensePhp\Services\RatesService::list()
+ * @see Vatsense\Services\RatesService::list()
  *
  * @phpstan-type RateListParamsShape = array{
  *   countryCode?: string|null,

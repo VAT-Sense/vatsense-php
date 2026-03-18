@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core\Attributes;
+namespace Vatsense\Core\Attributes;
 
-use VatsenseVatsensePhp\Core\Conversion\Contracts\Converter;
-use VatsenseVatsensePhp\Core\Conversion\Contracts\ConverterSource;
+use Vatsense\Core\Conversion\Contracts\Converter;
+use Vatsense\Core\Conversion\Contracts\ConverterSource;
 
 /**
  * @internal

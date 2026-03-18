@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Core\Conversion\Contracts;
+namespace Vatsense\Core\Conversion\Contracts;
 
-use VatsenseVatsensePhp\Core\Conversion\CoerceState;
-use VatsenseVatsensePhp\Core\Conversion\DumpState;
+use Vatsense\Core\Conversion\CoerceState;
+use Vatsense\Core\Conversion\DumpState;
 
 /**
  * @internal

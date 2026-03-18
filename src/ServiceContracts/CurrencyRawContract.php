@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\ServiceContracts;
+namespace Vatsense\ServiceContracts;
 
-use VatsenseVatsensePhp\Core\Contracts\BaseResponse;
-use VatsenseVatsensePhp\Core\Exceptions\APIException;
-use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceParams;
-use VatsenseVatsensePhp\Currency\CurrencyCalculateVatPriceResponse;
-use VatsenseVatsensePhp\Currency\CurrencyConvertParams;
-use VatsenseVatsensePhp\Currency\CurrencyConvertResponse;
-use VatsenseVatsensePhp\Currency\CurrencyListParams;
-use VatsenseVatsensePhp\Currency\CurrencyListResponse;
-use VatsenseVatsensePhp\RequestOptions;
+use Vatsense\Core\Contracts\BaseResponse;
+use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Currency\CurrencyCalculateVatPriceParams;
+use Vatsense\Currency\CurrencyCalculateVatPriceResponse;
+use Vatsense\Currency\CurrencyConvertParams;
+use Vatsense\Currency\CurrencyConvertResponse;
+use Vatsense\Currency\CurrencyListParams;
+use Vatsense\Currency\CurrencyListResponse;
+use Vatsense\RequestOptions;
 
 /**
- * @phpstan-import-type RequestOpts from \VatsenseVatsensePhp\RequestOptions
+ * @phpstan-import-type RequestOpts from \Vatsense\RequestOptions
  */
 interface CurrencyRawContract
 {

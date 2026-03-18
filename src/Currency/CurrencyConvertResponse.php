@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace VatsenseVatsensePhp\Currency;
+namespace Vatsense\Currency;
 
-use VatsenseVatsensePhp\Core\Attributes\Optional;
-use VatsenseVatsensePhp\Core\Concerns\SdkModel;
-use VatsenseVatsensePhp\Core\Contracts\BaseModel;
-use VatsenseVatsensePhp\Currency\CurrencyConvertResponse\Data;
+use Vatsense\Core\Attributes\Optional;
+use Vatsense\Core\Concerns\SdkModel;
+use Vatsense\Core\Contracts\BaseModel;
+use Vatsense\Currency\CurrencyConvertResponse\Data;
 
 /**
- * @phpstan-import-type DataShape from \VatsenseVatsensePhp\Currency\CurrencyConvertResponse\Data
+ * @phpstan-import-type DataShape from \Vatsense\Currency\CurrencyConvertResponse\Data
  *
  * @phpstan-type CurrencyConvertResponseShape = array{
  *   code?: int|null, data?: null|Data|DataShape, success?: bool|null

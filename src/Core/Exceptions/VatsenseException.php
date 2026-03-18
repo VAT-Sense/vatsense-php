@@ -1,11 +1,11 @@
 <?php
 
-namespace VatsenseVatsensePhp\Core\Exceptions;
+namespace Vatsense\Core\Exceptions;
 
-class VatsenseVatsensePhpException extends \Exception
+class VatsenseException extends \Exception
 {
     /** @var string */
-    protected const DESC = 'VatsenseVatsensePhp Error';
+    protected const DESC = 'Vatsense Error';
 
     public function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
     {
