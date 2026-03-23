@@ -1,27 +1,22 @@
-# Vat Sense PHP API library
+# VAT Sense PHP SDK
 
-The Vat Sense PHP library provides convenient access to the Vat Sense REST API from any PHP 8.1.0+ application.
-
-It is generated with [Stainless](https://www.stainless.com/).
-
-## Documentation
-
-The REST API documentation can be found on [vatsense.com](https://vatsense.com).
+The official PHP library for the [VAT Sense](https://vatsense.com) REST API. Validate VAT/EORI numbers, look up VAT/GST rates, calculate prices, convert currencies, and generate VAT-compliant invoices.
 
 ## Installation
 
 <!-- x-release-please-start-version -->
 
 ```
-composer require "vatsense/vatsense-php 0.2.0"
+composer require vatsense/vatsense-php
 ```
 
 <!-- x-release-please-end -->
 
-## Usage
+Requires PHP 8.1 or higher.
 
-This library uses named parameters to specify optional arguments.
-Parameters with a default value must be set by name.
+## Quick start
+
+Create a client using your API key from the [VAT Sense dashboard](https://vatsense.com/dashboard). The API uses HTTP Basic Auth with `user` as the username and your API key as the password.
 
 ```php
 <?php
@@ -29,133 +24,190 @@ Parameters with a default value must be set by name.
 use Vatsense\Client;
 
 $client = new Client(
-  username: getenv('VAT_SENSE_USERNAME') ?: 'My Username',
-  password: getenv('VAT_SENSE_PASSWORD') ?: 'My Password',
+    username: 'user',
+    password: 'your_api_key',
 );
-
-$rates = $client->rates->list();
-
-var_dump($rates->code);
 ```
 
-### Value Objects
+You can also set the `VAT_SENSE_USERNAME` and `VAT_SENSE_PASSWORD` environment variables and the client will pick them up automatically.
 
-It is recommended to use the static `with` constructor `InvoiceBusinessInput::with(address: "123 Example Street\nLondon\nSW3 1GL\nUnited Kingdom", ...)`
-and named parameters to initialize value objects.
+### Validate a VAT number
 
-However, builders are also provided `(new InvoiceBusinessInput)->withAddress("123 Example Street\nLondon\nSW3 1GL\nUnited Kingdom")`.
+```php
+$response = $client->validate->check(vatNumber: 'GB288305674');
 
-### Handling errors
+if ($response->data->valid) {
+    echo $response->data->company->companyName; // "BRITISH BROADCASTING CORPORATION"
+    echo $response->data->company->companyAddress;
+    echo $response->data->company->countryCode; // "GB"
+}
+```
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (i.e., 4xx or 5xx response), a subclass of `Vatsense\Core\Exceptions\APIException` will be thrown:
+VAT validation works for the UK, EU, Australia, Norway, Switzerland, South Africa, and Brazil.
+
+### Validate an EORI number
+
+```php
+$response = $client->validate->check(eoriNumber: 'GB123456789000');
+
+if ($response->data->valid) {
+    echo $response->data->company->companyName;
+}
+```
+
+EORI validation is available for UK and EU numbers only.
+
+### Get a consultation number
+
+If you need an official consultation number from VIES (EU) or HMRC (UK), provide your own VAT number as the requester:
+
+```php
+$response = $client->validate->check(
+    vatNumber: 'FR12345678901',
+    requesterVatNumber: 'FR98765432101',
+);
+
+echo $response->data->consultationNumber;
+```
+
+> **Note:** GB requester numbers only work for GB validations, and EU requester numbers only work for EU validations. Cross-region requests are not supported.
+
+### Find the VAT rate for a country
+
+```php
+$rate = $client->rates->find(countryCode: 'DE');
+
+echo $rate->data->countryName;      // "Germany"
+echo $rate->data->taxRate->rate;     // 19
+echo $rate->data->taxRate->class;    // "standard"
+```
+
+### Find a rate for a specific product type
+
+```php
+$rate = $client->rates->find(countryCode: 'DE', type: 'ebooks');
+
+echo $rate->data->taxRate->rate;  // 7
+echo $rate->data->taxRate->class; // "reduced"
+```
+
+### Find a rate by IP address
+
+Useful for determining the correct rate based on your customer's location:
+
+```php
+$rate = $client->rates->find(ipAddress: '185.86.151.11');
+
+echo $rate->data->countryCode; // "GB"
+echo $rate->data->taxRate->rate; // 20
+```
+
+### Calculate a VAT-inclusive price
+
+```php
+use Vatsense\Rates\RateCalculatePriceParams\TaxType;
+
+$result = $client->rates->calculatePrice(
+    price: '100.00',
+    taxType: TaxType::EXCL,
+    countryCode: 'FR',
+);
+
+echo $result->data->vatPrice->priceInclVat;  // Price including VAT
+echo $result->data->vatPrice->priceExclVat;  // Price excluding VAT
+echo $result->data->vatPrice->vatRate;       // VAT rate applied
+echo $result->data->vatPrice->vat;           // VAT amount
+```
+
+### List all VAT rates
+
+```php
+$rates = $client->rates->list();
+
+foreach ($rates->data as $rate) {
+    echo $rate->countryCode . ': ' . $rate->countryName . PHP_EOL;
+}
+
+// Filter to EU countries only
+$euRates = $client->rates->list(eu: true);
+```
+
+## Handling errors
+
+When the API returns an error, the library throws a typed exception:
 
 ```php
 <?php
 
 use Vatsense\Core\Exceptions\APIConnectionException;
-use Vatsense\Core\Exceptions\RateLimitException;
 use Vatsense\Core\Exceptions\APIStatusException;
+use Vatsense\Core\Exceptions\RateLimitException;
 
 try {
-  $rates = $client->rates->list();
+    $response = $client->validate->check(vatNumber: 'GB288305674');
 } catch (APIConnectionException $e) {
-  echo "The server could not be reached", PHP_EOL;
-  var_dump($e->getPrevious());
+    // Network issue, could not reach the API
+    echo $e->getMessage();
 } catch (RateLimitException $e) {
-  echo "A 429 status code was received; we should back off a bit.", PHP_EOL;
+    // 429: Too many requests (300/min general limit, 3/sec for UK validation)
+    echo "Rate limited, try again shortly";
 } catch (APIStatusException $e) {
-  echo "Another non-200-range status code was received", PHP_EOL;
-  echo $e->getMessage();
+    // Covers all other HTTP errors
+    echo $e->getMessage();
 }
 ```
 
-Error codes are as follows:
+A `412` error means the upstream validation service (VIES, HMRC, etc.) is temporarily unavailable. These requests do not count against your usage quota.
 
 | Cause            | Error Type                     |
 | ---------------- | ------------------------------ |
 | HTTP 400         | `BadRequestException`          |
 | HTTP 401         | `AuthenticationException`      |
-| HTTP 403         | `PermissionDeniedException`    |
 | HTTP 404         | `NotFoundException`            |
 | HTTP 409         | `ConflictException`            |
-| HTTP 422         | `UnprocessableEntityException` |
+| HTTP 412         | `APIStatusException`           |
 | HTTP 429         | `RateLimitException`           |
 | HTTP >= 500      | `InternalServerException`      |
-| Other HTTP error | `APIStatusException`           |
 | Timeout          | `APITimeoutException`          |
 | Network error    | `APIConnectionException`       |
 
-### Retries
+## Retries
 
-Certain errors will be automatically retried 2 times by default, with a short exponential backoff.
-
-Connection errors (for example, due to a network connectivity problem), 408 Request Timeout, 409 Conflict, 429 Rate Limit, >=500 Internal errors, and timeouts will all be retried by default.
-
-You can use the `maxRetries` option to configure or disable this:
+Failed requests are automatically retried up to 2 times with exponential backoff. This includes connection errors, timeouts, 429, and 5xx responses.
 
 ```php
-<?php
+// Disable retries
+$client = new Client(
+    username: 'user',
+    password: 'your_api_key',
+    requestOptions: ['maxRetries' => 0],
+);
 
-use Vatsense\Client;
-
-// Configure the default for all requests:
-$client = new Client(requestOptions: ['maxRetries' => 0]);
-
-// Or, configure per-request:
-$result = $client->rates->list(requestOptions: ['maxRetries' => 5]);
-```
-
-## Advanced concepts
-
-### Making custom or undocumented requests
-
-#### Undocumented properties
-
-You can send undocumented parameters to any endpoint, and read undocumented response properties, like so:
-
-Note: the `extra*` parameters of the same name overrides the documented parameters.
-
-```php
-<?php
-
-$rates = $client->rates->list(
-  requestOptions: [
-    'extraQueryParams' => ['my_query_parameter' => 'value'],
-    'extraBodyParams' => ['my_body_parameter' => 'value'],
-    'extraHeaders' => ['my-header' => 'value'],
-  ],
+// Or configure per request
+$response = $client->validate->check(
+    vatNumber: 'GB288305674',
+    requestOptions: ['maxRetries' => 5],
 );
 ```
 
-#### Undocumented request params
+## Available services
 
-If you want to explicitly send an extra param, you can do so with the `extra_query`, `extra_body`, and `extra_headers` under the `request_options:` parameter when making a request, as seen in the examples above.
+| Service               | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| `$client->validate`   | Validate VAT and EORI numbers                   |
+| `$client->rates`      | VAT/GST rate lookups, price calculations         |
+| `$client->countries`  | Country data and province lookups                |
+| `$client->currency`   | Exchange rates and currency conversion           |
+| `$client->invoice`    | Create and manage VAT-compliant invoices         |
+| `$client->usage`      | Check your API usage                             |
 
-#### Undocumented endpoints
+## Documentation
 
-To make requests to undocumented endpoints while retaining the benefit of auth, retries, and so on, you can make requests using `client.request`, like so:
-
-```php
-<?php
-
-$response = $client->request(
-  method: "post",
-  path: '/undocumented/endpoint',
-  query: ['dog' => 'woof'],
-  headers: ['useful-header' => 'interesting-value'],
-  body: ['hello' => 'world']
-);
-```
+Full API documentation is available at [vatsense.com/documentation](https://vatsense.com/documentation).
 
 ## Versioning
 
 This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs may change at any time.
-
-This package considers improvements to the (non-runtime) PHPDoc type definitions to be non-breaking changes.
-
-## Requirements
-
-PHP 8.1.0 or higher.
 
 ## Contributing
 
