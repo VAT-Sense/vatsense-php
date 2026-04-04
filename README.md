@@ -13,7 +13,7 @@ The REST API documentation can be found on [vatsense.com](https://vatsense.com).
 <!-- x-release-please-start-version -->
 
 ```
-composer require "vatsense/vatsense-php 0.2.0"
+composer require "vatsense/vatsense-php 0.2.1"
 ```
 
 <!-- x-release-please-end -->
