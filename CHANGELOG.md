@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 (2026-03-23)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.2.0...v0.2.1)
+
+### Documentation
+
+* **readme:** tailor README to VAT Sense use cases ([f7116f2](https://github.com/VAT-Sense/vatsense-php/commit/f7116f24f9ad16d6cd8061473c97108a45bba5c1))
+
 ## 0.2.0 (2026-03-18)
 
 Full Changelog: [v0.1.1...v0.2.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.1.1...v0.2.0)
