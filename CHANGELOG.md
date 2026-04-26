@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.2 (2026-04-26)
+
+Full Changelog: [v0.2.1...v0.2.2](https://github.com/VAT-Sense/vatsense-php/compare/v0.2.1...v0.2.2)
+
+### Bug Fixes
+
+* **client:** properly generate file params ([d091c3e](https://github.com/VAT-Sense/vatsense-php/commit/d091c3eda8766e9820f2adfc2d8e41d85baac7f8))
+* **client:** resolve serialization issue with unions and enums ([1fb649f](https://github.com/VAT-Sense/vatsense-php/commit/1fb649f0d126ad5529b34998270be6f997796766))
+* populate enum-typed properties with enum instances ([6d571b8](https://github.com/VAT-Sense/vatsense-php/commit/6d571b82eb375fcc007d616303b7ce239ec5cb44))
+* revert enum parsing change that lead to unconditional failure ([5fe9075](https://github.com/VAT-Sense/vatsense-php/commit/5fe90757e1bf6843f6cccab2a1fcdfe8326c1663))
+
 ## 0.2.1 (2026-03-23)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.2.0...v0.2.1)
