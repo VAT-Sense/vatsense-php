@@ -7,6 +7,7 @@ namespace Vatsense;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Vatsense\Core\BaseClient;
+use Vatsense\Core\Implementation\StreamingHttpClient;
 use Vatsense\Core\Util;
 use Vatsense\Services\CountriesService;
 use Vatsense\Services\CurrencyService;
@@ -86,6 +87,11 @@ class Client extends BaseClient
             ),
             $requestOptions,
         );
+
+        if (is_null($options->streamingTransporter)) {
+            assert(!is_null($options->transporter));
+            $options->streamingTransporter = new StreamingHttpClient($options->transporter);
+        }
 
         /** @var array<string, string|null> $headers */
         $headers = [

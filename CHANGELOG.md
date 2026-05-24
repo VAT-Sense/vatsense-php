@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 (2026-05-13)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.3.0...v0.3.1)
+
+### Bug Fixes
+
+* guzzle requires special handling to enable streaming ([e7c4d75](https://github.com/VAT-Sense/vatsense-php/commit/e7c4d75af54c5e1273ef8de581573979d75348f3))
+* **release:** use canonical GitHub URL in Packagist publish script ([a3df2e7](https://github.com/VAT-Sense/vatsense-php/commit/a3df2e7d86ffb1383f71e874f4bb83db5cee7657))
+
 ## 0.3.0 (2026-05-05)
 
 Full Changelog: [v0.2.1...v0.3.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.2.1...v0.3.0)
