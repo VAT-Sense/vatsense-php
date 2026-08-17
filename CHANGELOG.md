@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.4.0 (2026-08-14)
+
+Full Changelog: [v0.3.1...v0.4.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.3.1...v0.4.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([6b39724](https://github.com/VAT-Sense/vatsense-php/commit/6b397246c7891ae3243c7f4453190beb0cc6a78f))
+
+
+### Chores
+
+* **internal:** codegen related update ([2653ed1](https://github.com/VAT-Sense/vatsense-php/commit/2653ed18eaccf6179bc0006208818fc902ac7c0a))
+
 ## 0.3.1 (2026-05-13)
 
 Full Changelog: [v0.3.0...v0.3.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.3.0...v0.3.1)
