@@ -18,6 +18,7 @@ use Vatsense\Rates\TaxRate\Object_;
  *   description?: string|null,
  *   object?: null|\Vatsense\Rates\TaxRate\Object_|value-of<\Vatsense\Rates\TaxRate\Object_>,
  *   rate?: float|null,
+ *   taxName?: string|null,
  *   types?: TypesShape|null,
  *   province?: string|null,
  * }
@@ -28,7 +29,7 @@ final class Other implements BaseModel
     use SdkModel;
 
     /**
-     * The rate class (e.g. "standard", "reduced", "zero").
+     * The rate tier within its tax (e.g. "standard", "reduced", "higher", "zero", "exempt").
      */
     #[Optional]
     public ?string $class;
@@ -48,6 +49,12 @@ final class Other implements BaseModel
      */
     #[Optional]
     public ?float $rate;
+
+    /**
+     * Short name of the tax this rate belongs to (e.g. "vat", "gst", "hst", "pst", "qst", "igic", "sst"). Open vocabulary, lower case. Null where not yet classified.
+     */
+    #[Optional('tax_name', nullable: true)]
+    public ?string $taxName;
 
     /**
      * Comma-separated list of product types this rate applies to, or false if it applies generally.
@@ -81,6 +88,7 @@ final class Other implements BaseModel
         ?string $description = null,
         Object_|string|null $object = null,
         ?float $rate = null,
+        ?string $taxName = null,
         string|bool|null $types = null,
         ?string $province = null,
     ): self {
@@ -90,6 +98,7 @@ final class Other implements BaseModel
         null !== $description && $self['description'] = $description;
         null !== $object && $self['object'] = $object;
         null !== $rate && $self['rate'] = $rate;
+        null !== $taxName && $self['taxName'] = $taxName;
         null !== $types && $self['types'] = $types;
         null !== $province && $self['province'] = $province;
 
@@ -97,7 +106,7 @@ final class Other implements BaseModel
     }
 
     /**
-     * The rate class (e.g. "standard", "reduced", "zero").
+     * The rate tier within its tax (e.g. "standard", "reduced", "higher", "zero", "exempt").
      */
     public function withClass(string $class): self
     {
@@ -137,6 +146,17 @@ final class Other implements BaseModel
     {
         $self = clone $this;
         $self['rate'] = $rate;
+
+        return $self;
+    }
+
+    /**
+     * Short name of the tax this rate belongs to (e.g. "vat", "gst", "hst", "pst", "qst", "igic", "sst"). Open vocabulary, lower case. Null where not yet classified.
+     */
+    public function withTaxName(?string $taxName): self
+    {
+        $self = clone $this;
+        $self['taxName'] = $taxName;
 
         return $self;
     }
