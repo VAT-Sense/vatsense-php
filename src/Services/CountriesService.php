@@ -41,7 +41,7 @@ final class CountriesService implements CountriesContract
      *
      * You can optionally filter by country code or IP address.
      *
-     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      * @param string $ipAddress An IPv4 or IPv6 address. If provided, the country will be determined from the IP address.
      * @param RequestOpts|null $requestOptions
      *

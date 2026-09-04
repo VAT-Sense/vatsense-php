@@ -1,4 +1,4 @@
 configured_endpoints: 22
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/weio-ltd/vat-sense-8075b5252982fdf9f1b1539e1015f243ae95c8a83e2e6995bd0b43d2b4ee4171.yml
-openapi_spec_hash: dc99fb074e506e0fca495dcbcd8511ab
-config_hash: 97dc7424b8b2e2bfa8edfe3f0d4d358c
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/weio-ltd/vat-sense-e557ed9135c631d15e7758dce7c6f97072f174c07430d15723d9ed4ad03ac452.yml
+openapi_spec_hash: 3dfceeaab676f6b92adbc9715db56f6d
+config_hash: 9bf5dcba4e8af734204feccadf9193d2

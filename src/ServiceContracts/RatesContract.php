@@ -20,7 +20,7 @@ interface RatesContract
     /**
      * @api
      *
-     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      * @param bool $eu Filter results by EU membership. Use 1 for EU countries only, 0 for non-EU only.
      * @param string $ipAddress An IPv4 or IPv6 address. If provided, the country will be determined from the IP address.
      * @param \DateTimeInterface $period A historical date to retrieve rates for (format "YYYY-MM-DD HH:MM:SS"). Must be a past date.
@@ -41,7 +41,7 @@ interface RatesContract
      *
      * @param string $price The price to calculate on. Must be a string with exactly 2 decimal places (e.g. "30.00", "59.95").
      * @param TaxType|value-of<TaxType> $taxType whether the provided price is inclusive or exclusive of VAT
-     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      * @param bool $eu Filter results by EU membership. Use 1 for EU countries only, 0 for non-EU only.
      * @param string $ipAddress An IPv4 or IPv6 address. If provided, the country will be determined from the IP address.
      * @param string $provinceCode A 2-character province code (e.g. "NU", "NT"). If providing a province
@@ -66,7 +66,7 @@ interface RatesContract
     /**
      * @api
      *
-     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      * @param bool $eu Filter results by EU membership. Use 1 for EU countries only, 0 for non-EU only.
      * @param string $ipAddress An IPv4 or IPv6 address. If provided, the country will be determined from the IP address.
      * @param \DateTimeInterface $period A historical date to retrieve rates for (format "YYYY-MM-DD HH:MM:SS"). Must be a past date.
@@ -91,7 +91,7 @@ interface RatesContract
     /**
      * @api
      *
-     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * @param string $countryCode A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      * @param bool $eu Filter results by EU membership. Use 1 for EU countries only, 0 for non-EU only.
      * @param string $ipAddress An IPv4 or IPv6 address. If provided, the country will be determined from the IP address.
      * @param \DateTimeInterface $period A historical date to retrieve rates for (format "YYYY-MM-DD HH:MM:SS"). Must be a past date.

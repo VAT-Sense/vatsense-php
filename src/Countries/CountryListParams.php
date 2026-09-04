@@ -29,7 +29,7 @@ final class CountryListParams implements BaseModel
     use SdkParams;
 
     /**
-     * A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      */
     #[Optional]
     public ?string $countryCode;
@@ -63,7 +63,7 @@ final class CountryListParams implements BaseModel
     }
 
     /**
-     * A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR").
+     * A 2-character ISO 3166-1 alpha-2 country code (e.g. "GB", "FR"). Overseas territories that carry their own ISO code but are modelled as provinces of a parent country (e.g. "NC" New Caledonia, "MF" Saint Martin, "GP", "MQ", "RE", "PF", "GF", "YT", "BL", "PM", "WF" under "FR") may be queried directly; the response identifies the territory and the rate is the one the parent-plus-province query returns.
      */
     public function withCountryCode(string $countryCode): self
     {
