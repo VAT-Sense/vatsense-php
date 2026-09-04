@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.1 (2026-09-04)
+
+Full Changelog: [v0.4.0...v0.4.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.4.0...v0.4.1)
+
+### Chores
+
+* **internal:** codegen related update ([4aefcbc](https://github.com/VAT-Sense/vatsense-php/commit/4aefcbc266e0faf2cea7d655b76520bb814df889))
+
 ## 0.4.0 (2026-08-14)
 
 Full Changelog: [v0.3.1...v0.4.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.3.1...v0.4.0)
