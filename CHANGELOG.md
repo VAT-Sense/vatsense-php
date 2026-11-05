@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.4.1...v0.5.0) (2026-11-05)
+
+
+### Features
+
+* **api:** company matching, provinces filter, Idempotency-Key and credit notes ([#9](https://github.com/VAT-Sense/vatsense-php/issues/9)) ([76514da](https://github.com/VAT-Sense/vatsense-php/commit/76514dae862b5d623e74160a4be99c5fba9d39fb))
+
 ## 0.4.1 (2026-09-04)
 
 Full Changelog: [v0.4.0...v0.4.1](https://github.com/VAT-Sense/vatsense-php/compare/v0.4.0...v0.4.1)
