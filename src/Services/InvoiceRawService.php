@@ -7,6 +7,7 @@ namespace Vatsense\Services;
 use Vatsense\Client;
 use Vatsense\Core\Contracts\BaseResponse;
 use Vatsense\Core\Exceptions\APIException;
+use Vatsense\Core\Util;
 use Vatsense\Invoice\InvoiceBusinessInput;
 use Vatsense\Invoice\InvoiceConversionInput;
 use Vatsense\Invoice\InvoiceCreateParams;
@@ -65,6 +66,8 @@ final class InvoiceRawService implements InvoiceRawContract
      *   taxType?: TaxType|value-of<TaxType>,
      *   type?: Type|value-of<Type>,
      *   zeroRated?: bool,
+     *   originalInvoiceID?: string,
+     *   idempotencyKey?: string,
      * }|InvoiceCreateParams $params
      * @param RequestOpts|null $requestOptions
      *
@@ -81,11 +84,17 @@ final class InvoiceRawService implements InvoiceRawContract
             $requestOptions,
         );
 
+        $headerParams = ['idempotencyKey' => 'Idempotency-Key'];
+
         // @phpstan-ignore-next-line return.type
         return $this->client->request(
             method: 'post',
             path: 'invoice',
-            body: (object) $parsed,
+            headers: Util::array_transform_keys(
+                array_intersect_key($parsed, $headerParams),
+                $headerParams
+            ),
+            body: (object) array_diff_key($parsed, $headerParams),
             options: $options,
             convert: InvoiceResponse::class,
         );

@@ -36,6 +36,7 @@ use Vatsense\Invoice\Item\InvoiceItemInput;
  *   taxType?: null|TaxType|value-of<TaxType>,
  *   type?: null|Type|value-of<Type>,
  *   zeroRated?: bool|null,
+ *   originalInvoiceID?: string|null,
  * }
  */
 final class CreateInvoice implements BaseModel
@@ -159,6 +160,14 @@ final class CreateInvoice implements BaseModel
      *   ->withTaxPoint(...)
      * ```
      */
+    /**
+     * For a credit note: the ID of your own sale invoice it credits. Only a
+     * `refund` can name one; anything else gets `400` "Invalid Original Invoice
+     * ID". The credit note is then headed "Credit note".
+     */
+    #[Optional('original_invoice_id', nullable: true)]
+    public ?string $originalInvoiceID;
+
     public function __construct()
     {
         $this->initialize();
@@ -194,6 +203,7 @@ final class CreateInvoice implements BaseModel
         TaxType|string|null $taxType = null,
         Type|string|null $type = null,
         ?bool $zeroRated = null,
+        ?string $originalInvoiceID = null,
     ): self {
         $self = new self;
 
@@ -215,6 +225,7 @@ final class CreateInvoice implements BaseModel
         null !== $taxType && $self['taxType'] = $taxType;
         null !== $type && $self['type'] = $type;
         null !== $zeroRated && $self['zeroRated'] = $zeroRated;
+        null !== $originalInvoiceID && $self['originalInvoiceID'] = $originalInvoiceID;
 
         return $self;
     }
@@ -407,6 +418,19 @@ final class CreateInvoice implements BaseModel
     {
         $self = clone $this;
         $self['zeroRated'] = $zeroRated;
+
+        return $self;
+    }
+
+    /**
+     * For a credit note: the ID of your own sale invoice it credits. Only a
+     * `refund` can name one; anything else gets `400` "Invalid Original Invoice
+     * ID". The credit note is then headed "Credit note".
+     */
+    public function withOriginalInvoiceID(string $originalInvoiceID): self
+    {
+        $self = clone $this;
+        $self['originalInvoiceID'] = $originalInvoiceID;
 
         return $self;
     }

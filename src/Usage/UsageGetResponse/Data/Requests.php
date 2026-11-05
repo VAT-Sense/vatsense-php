@@ -25,13 +25,14 @@ final class Requests implements BaseModel
     public ?int $remaining;
 
     /**
-     * Total requests allowed on your plan.
+     * Requests available in the current billing period (plan, request packs
+     * and, while overage is on, the overage allowed).
      */
     #[Optional]
     public ?int $total;
 
     /**
-     * Requests used in the last 30 days.
+     * Requests used so far in the current billing period.
      */
     #[Optional]
     public ?int $used;
@@ -72,7 +73,8 @@ final class Requests implements BaseModel
     }
 
     /**
-     * Total requests allowed on your plan.
+     * Requests available in the current billing period (plan, request packs
+     * and, while overage is on, the overage allowed).
      */
     public function withTotal(int $total): self
     {
@@ -83,7 +85,7 @@ final class Requests implements BaseModel
     }
 
     /**
-     * Requests used in the last 30 days.
+     * Requests used so far in the current billing period.
      */
     public function withUsed(int $used): self
     {
