@@ -23,6 +23,7 @@ use Vatsense\Core\Contracts\BaseModel;
  *   eu?: bool|null,
  *   ipAddress?: string|null,
  *   period?: \DateTimeInterface|null,
+ *   provinces?: bool|null,
  * }
  */
 final class RateListParams implements BaseModel
@@ -55,6 +56,16 @@ final class RateListParams implements BaseModel
     #[Optional]
     public ?\DateTimeInterface $period;
 
+    /**
+     * Whether to list province and territory rates (rate objects that carry
+     * a `province` property) in each country's `other` list. Pass false to
+     * leave them out, so only country-wide rates are listed; true, or omitting
+     * the parameter, lists them as before. The `standard` rate is always the
+     * country-wide one.
+     */
+    #[Optional]
+    public ?bool $provinces;
+
     public function __construct()
     {
         $this->initialize();
@@ -70,6 +81,7 @@ final class RateListParams implements BaseModel
         ?bool $eu = null,
         ?string $ipAddress = null,
         ?\DateTimeInterface $period = null,
+        ?bool $provinces = null,
     ): self {
         $self = new self;
 
@@ -77,6 +89,7 @@ final class RateListParams implements BaseModel
         null !== $eu && $self['eu'] = $eu;
         null !== $ipAddress && $self['ipAddress'] = $ipAddress;
         null !== $period && $self['period'] = $period;
+        null !== $provinces && $self['provinces'] = $provinces;
 
         return $self;
     }
@@ -121,6 +134,21 @@ final class RateListParams implements BaseModel
     {
         $self = clone $this;
         $self['period'] = $period;
+
+        return $self;
+    }
+
+    /**
+     * Whether to list province and territory rates (rate objects that carry
+     * a `province` property) in each country's `other` list. Pass false to
+     * leave them out, so only country-wide rates are listed; true, or omitting
+     * the parameter, lists them as before. The `standard` rate is always the
+     * country-wide one.
+     */
+    public function withProvinces(bool $provinces): self
+    {
+        $self = clone $this;
+        $self['provinces'] = $provinces;
 
         return $self;
     }

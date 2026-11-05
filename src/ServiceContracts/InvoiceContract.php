@@ -45,6 +45,8 @@ interface InvoiceContract
      * @param TaxType|value-of<TaxType> $taxType whether item prices include or exclude VAT
      * @param Type|value-of<Type> $type the type of invoice
      * @param bool $zeroRated whether the invoice has been zero-rated
+     * @param string $originalInvoiceID For a credit note: the ID of your own sale invoice it credits. Only a `refund` can name one; anything else gets `400` "Invalid Original Invoice ID". The credit note is then headed "Credit note".
+     * @param string $idempotencyKey Sent as the `Idempotency-Key` header to retry a create safely. A repeat with the same key and the same body, byte for byte, creates nothing and returns the invoice the first request made. 1 to 255 characters, unique to this invoice (such as your order number or a UUID).
      * @param RequestOpts|null $requestOptions
      *
      * @throws APIException
@@ -68,6 +70,8 @@ interface InvoiceContract
         Type|string $type = 'sale',
         bool $zeroRated = false,
         RequestOptions|array|null $requestOptions = null,
+        ?string $originalInvoiceID = null,
+        ?string $idempotencyKey = null,
     ): InvoiceResponse;
 
     /**

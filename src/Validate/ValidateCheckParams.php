@@ -20,6 +20,11 @@ use Vatsense\Core\Contracts\BaseModel;
  *
  * If the external validation service is temporarily unavailable, the API
  * returns a `412` error and the request does not count against your usage quota.
+ * It also returns the `412`, uncounted, when a check takes longer than 55
+ * seconds for a number checked with VIES or the EU EORI service, or 25 seconds
+ * for any other. With a webhook endpoint taking `validation.completed`, a
+ * number that got the `412` keeps being checked and the answer is sent by
+ * webhook (https://vatsense.com/documentation#webhooks).
  *
  * Provide either `vat_number` or `eori_number`, but not both.
  *
@@ -29,6 +34,11 @@ use Vatsense\Core\Contracts\BaseModel;
  *   eoriNumber?: string|null,
  *   requesterVatNumber?: string|null,
  *   vatNumber?: string|null,
+ *   matchAddress?: string|null,
+ *   matchCity?: string|null,
+ *   matchCompanyName?: string|null,
+ *   matchPostcode?: string|null,
+ *   matchStreet?: string|null,
  * }
  */
 final class ValidateCheckParams implements BaseModel
@@ -62,6 +72,41 @@ final class ValidateCheckParams implements BaseModel
     #[Optional]
     public ?string $vatNumber;
 
+    /**
+     * The whole address you hold, as one line, matched against the registered
+     * address.
+     */
+    #[Optional]
+    public ?string $matchAddress;
+
+    /**
+     * The town or city you hold, looked for in the registered address.
+     */
+    #[Optional]
+    public ?string $matchCity;
+
+    /**
+     * The company name you hold, matched against the registered name. Legal
+     * forms such as Ltd or GmbH, accents, punctuation and word order are
+     * ignored. Sending any `match_` parameter adds `match` to the response;
+     * matching costs nothing extra.
+     */
+    #[Optional]
+    public ?string $matchCompanyName;
+
+    /**
+     * The postcode you hold, looked for in the registered address. Spaces are
+     * ignored.
+     */
+    #[Optional]
+    public ?string $matchPostcode;
+
+    /**
+     * The street line you hold, looked for in the registered address.
+     */
+    #[Optional]
+    public ?string $matchStreet;
+
     public function __construct()
     {
         $this->initialize();
@@ -76,12 +121,22 @@ final class ValidateCheckParams implements BaseModel
         ?string $eoriNumber = null,
         ?string $requesterVatNumber = null,
         ?string $vatNumber = null,
+        ?string $matchAddress = null,
+        ?string $matchCity = null,
+        ?string $matchCompanyName = null,
+        ?string $matchPostcode = null,
+        ?string $matchStreet = null,
     ): self {
         $self = new self;
 
         null !== $eoriNumber && $self['eoriNumber'] = $eoriNumber;
         null !== $requesterVatNumber && $self['requesterVatNumber'] = $requesterVatNumber;
         null !== $vatNumber && $self['vatNumber'] = $vatNumber;
+        null !== $matchAddress && $self['matchAddress'] = $matchAddress;
+        null !== $matchCity && $self['matchCity'] = $matchCity;
+        null !== $matchCompanyName && $self['matchCompanyName'] = $matchCompanyName;
+        null !== $matchPostcode && $self['matchPostcode'] = $matchPostcode;
+        null !== $matchStreet && $self['matchStreet'] = $matchStreet;
 
         return $self;
     }
@@ -122,6 +177,66 @@ final class ValidateCheckParams implements BaseModel
     {
         $self = clone $this;
         $self['vatNumber'] = $vatNumber;
+
+        return $self;
+    }
+
+    /**
+     * The whole address you hold, as one line, matched against the registered
+     * address.
+     */
+    public function withMatchAddress(string $matchAddress): self
+    {
+        $self = clone $this;
+        $self['matchAddress'] = $matchAddress;
+
+        return $self;
+    }
+
+    /**
+     * The town or city you hold, looked for in the registered address.
+     */
+    public function withMatchCity(string $matchCity): self
+    {
+        $self = clone $this;
+        $self['matchCity'] = $matchCity;
+
+        return $self;
+    }
+
+    /**
+     * The company name you hold, matched against the registered name. Legal
+     * forms such as Ltd or GmbH, accents, punctuation and word order are
+     * ignored. Sending any `match_` parameter adds `match` to the response;
+     * matching costs nothing extra.
+     */
+    public function withMatchCompanyName(string $matchCompanyName): self
+    {
+        $self = clone $this;
+        $self['matchCompanyName'] = $matchCompanyName;
+
+        return $self;
+    }
+
+    /**
+     * The postcode you hold, looked for in the registered address. Spaces are
+     * ignored.
+     */
+    public function withMatchPostcode(string $matchPostcode): self
+    {
+        $self = clone $this;
+        $self['matchPostcode'] = $matchPostcode;
+
+        return $self;
+    }
+
+    /**
+     * The street line you hold, looked for in the registered address.
+     */
+    public function withMatchStreet(string $matchStreet): self
+    {
+        $self = clone $this;
+        $self['matchStreet'] = $matchStreet;
 
         return $self;
     }

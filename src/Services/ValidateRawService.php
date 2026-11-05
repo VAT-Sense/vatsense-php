@@ -39,11 +39,23 @@ final class ValidateRawService implements ValidateRawContract
      *
      * If the external validation service is temporarily unavailable, the API
      * returns a `412` error and the request does not count against your usage quota.
+     * It also returns the `412`, uncounted, when a check takes longer than 55
+     * seconds for a number checked with VIES or the EU EORI service, or 25 seconds
+     * for any other. With a webhook endpoint taking `validation.completed`, a
+     * number that got the `412` keeps being checked and the answer is sent by
+     * webhook (https://vatsense.com/documentation#webhooks).
      *
      * Provide either `vat_number` or `eori_number`, but not both.
      *
      * @param array{
-     *   eoriNumber?: string, requesterVatNumber?: string, vatNumber?: string
+     *   eoriNumber?: string,
+     *   requesterVatNumber?: string,
+     *   vatNumber?: string,
+     *   matchAddress?: string,
+     *   matchCity?: string,
+     *   matchCompanyName?: string,
+     *   matchPostcode?: string,
+     *   matchStreet?: string,
      * }|ValidateCheckParams $params
      * @param RequestOpts|null $requestOptions
      *
@@ -68,6 +80,11 @@ final class ValidateRawService implements ValidateRawContract
                 $parsed,
                 [
                     'eoriNumber' => 'eori_number',
+                    'matchAddress' => 'match_address',
+                    'matchCity' => 'match_city',
+                    'matchCompanyName' => 'match_company_name',
+                    'matchPostcode' => 'match_postcode',
+                    'matchStreet' => 'match_street',
                     'requesterVatNumber' => 'requester_vat_number',
                     'vatNumber' => 'vat_number',
                 ],

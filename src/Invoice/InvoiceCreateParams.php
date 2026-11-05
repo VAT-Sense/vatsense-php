@@ -44,6 +44,8 @@ use Vatsense\Invoice\Item\InvoiceItemInput;
  *   taxType?: null|TaxType|value-of<TaxType>,
  *   type?: null|Type|value-of<Type>,
  *   zeroRated?: bool|null,
+ *   originalInvoiceID?: string|null,
+ *   idempotencyKey?: string|null,
  * }
  */
 final class InvoiceCreateParams implements BaseModel
@@ -168,6 +170,23 @@ final class InvoiceCreateParams implements BaseModel
      *   ->withTaxPoint(...)
      * ```
      */
+    /**
+     * For a credit note: the ID of your own sale invoice it credits. Only a
+     * `refund` can name one; anything else gets `400` "Invalid Original Invoice
+     * ID". The credit note is then headed "Credit note".
+     */
+    #[Optional('original_invoice_id', nullable: true)]
+    public ?string $originalInvoiceID;
+
+    /**
+     * Sent as the `Idempotency-Key` header to retry a create safely. A repeat
+     * with the same key and the same body, byte for byte, creates nothing and
+     * returns the invoice the first request made. 1 to 255 characters, unique
+     * to this invoice (such as your order number or a UUID).
+     */
+    #[Optional]
+    public ?string $idempotencyKey;
+
     public function __construct()
     {
         $this->initialize();
@@ -203,6 +222,8 @@ final class InvoiceCreateParams implements BaseModel
         TaxType|string|null $taxType = null,
         Type|string|null $type = null,
         ?bool $zeroRated = null,
+        ?string $originalInvoiceID = null,
+        ?string $idempotencyKey = null,
     ): self {
         $self = new self;
 
@@ -224,6 +245,8 @@ final class InvoiceCreateParams implements BaseModel
         null !== $taxType && $self['taxType'] = $taxType;
         null !== $type && $self['type'] = $type;
         null !== $zeroRated && $self['zeroRated'] = $zeroRated;
+        null !== $originalInvoiceID && $self['originalInvoiceID'] = $originalInvoiceID;
+        null !== $idempotencyKey && $self['idempotencyKey'] = $idempotencyKey;
 
         return $self;
     }
@@ -416,6 +439,33 @@ final class InvoiceCreateParams implements BaseModel
     {
         $self = clone $this;
         $self['zeroRated'] = $zeroRated;
+
+        return $self;
+    }
+
+    /**
+     * For a credit note: the ID of your own sale invoice it credits. Only a
+     * `refund` can name one; anything else gets `400` "Invalid Original Invoice
+     * ID". The credit note is then headed "Credit note".
+     */
+    public function withOriginalInvoiceID(string $originalInvoiceID): self
+    {
+        $self = clone $this;
+        $self['originalInvoiceID'] = $originalInvoiceID;
+
+        return $self;
+    }
+
+    /**
+     * Sent as the `Idempotency-Key` header to retry a create safely. A repeat
+     * with the same key and the same body, byte for byte, creates nothing and
+     * returns the invoice the first request made. 1 to 255 characters, unique
+     * to this invoice (such as your order number or a UUID).
+     */
+    public function withIdempotencyKey(string $idempotencyKey): self
+    {
+        $self = clone $this;
+        $self['idempotencyKey'] = $idempotencyKey;
 
         return $self;
     }

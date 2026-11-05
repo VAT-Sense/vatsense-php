@@ -24,6 +24,7 @@ interface RatesContract
      * @param bool $eu Filter results by EU membership. Use 1 for EU countries only, 0 for non-EU only.
      * @param string $ipAddress An IPv4 or IPv6 address. If provided, the country will be determined from the IP address.
      * @param \DateTimeInterface $period A historical date to retrieve rates for (format "YYYY-MM-DD HH:MM:SS"). Must be a past date.
+     * @param bool $provinces Whether to list province and territory rates (rate objects that carry a `province` property) in each country's `other` list. Pass false to leave them out, so only country-wide rates are listed; true, or omitting the parameter, lists them as before. The `standard` rate is always the country-wide one.
      * @param RequestOpts|null $requestOptions
      *
      * @throws APIException
@@ -34,6 +35,7 @@ interface RatesContract
         ?string $ipAddress = null,
         ?\DateTimeInterface $period = null,
         RequestOptions|array|null $requestOptions = null,
+        ?bool $provinces = null,
     ): RateListResponse;
 
     /**

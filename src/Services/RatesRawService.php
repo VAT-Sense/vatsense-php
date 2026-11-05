@@ -47,6 +47,7 @@ final class RatesRawService implements RatesRawContract
      *   eu?: bool,
      *   ipAddress?: string,
      *   period?: \DateTimeInterface,
+     *   provinces?: bool,
      * }|RateListParams $params
      * @param RequestOpts|null $requestOptions
      *

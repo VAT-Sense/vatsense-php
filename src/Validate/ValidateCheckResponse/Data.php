@@ -9,14 +9,17 @@ use Vatsense\Core\Concerns\SdkModel;
 use Vatsense\Core\Contracts\BaseModel;
 use Vatsense\Validate\ValidateCheckResponse\Data\Company\EoriValidationCompany;
 use Vatsense\Validate\ValidateCheckResponse\Data\Company\ValidationCompany;
+use Vatsense\Validate\ValidateCheckResponse\Data\MatchResult;
 
 /**
  * @phpstan-import-type CompanyVariants from \Vatsense\Validate\ValidateCheckResponse\Data\Company
  * @phpstan-import-type CompanyShape from \Vatsense\Validate\ValidateCheckResponse\Data\Company
+ * @phpstan-import-type MatchResultShape from \Vatsense\Validate\ValidateCheckResponse\Data\MatchResult
  *
  * @phpstan-type DataShape = array{
  *   company?: CompanyShape|null,
  *   consultationNumber?: string|null,
+ *   match?: null|MatchResult|MatchResultShape,
  *   valid?: bool|null,
  * }
  */
@@ -36,6 +39,12 @@ final class Data implements BaseModel
     public ?string $consultationNumber;
 
     /**
+     * Only when a `match_` parameter was sent.
+     */
+    #[Optional]
+    public ?MatchResult $match;
+
+    /**
      * Whether the VAT/EORI number is valid.
      */
     #[Optional]
@@ -52,17 +61,20 @@ final class Data implements BaseModel
      * You must use named parameters to construct any parameters with a default value.
      *
      * @param CompanyShape|null $company
+     * @param MatchResult|MatchResultShape|null $match
      */
     public static function with(
         ValidationCompany|array|EoriValidationCompany|null $company = null,
         ?string $consultationNumber = null,
         ?bool $valid = null,
+        MatchResult|array|null $match = null,
     ): self {
         $self = new self;
 
         null !== $company && $self['company'] = $company;
         null !== $consultationNumber && $self['consultationNumber'] = $consultationNumber;
         null !== $valid && $self['valid'] = $valid;
+        null !== $match && $self['match'] = $match;
 
         return $self;
     }
@@ -97,6 +109,19 @@ final class Data implements BaseModel
     {
         $self = clone $this;
         $self['valid'] = $valid;
+
+        return $self;
+    }
+
+    /**
+     * Only when a `match_` parameter was sent.
+     *
+     * @param MatchResult|MatchResultShape $match
+     */
+    public function withMatch(MatchResult|array $match): self
+    {
+        $self = clone $this;
+        $self['match'] = $match;
 
         return $self;
     }

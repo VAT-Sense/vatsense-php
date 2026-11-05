@@ -45,6 +45,7 @@ use Vatsense\Invoice\Item\InvoiceItem;
  *   type?: null|Type|value-of<Type>,
  *   updated?: \DateTimeInterface|null,
  *   zeroRated?: bool|null,
+ *   originalInvoiceID?: string|null,
  * }
  */
 final class Invoice implements BaseModel
@@ -80,7 +81,9 @@ final class Invoice implements BaseModel
     public ?string $invoiceNumber;
 
     /**
-     * Unique URL to view the invoice. Append "/pdf" to download a PDF copy.
+     * Unique, unguessable URL to view the invoice. Append "/pdf" to download a
+     * PDF copy. Invoices created before the November 2026 relaunch keep their
+     * earlier style of link.
      */
     #[Optional('invoice_url')]
     public ?string $invoiceURL;
@@ -125,6 +128,12 @@ final class Invoice implements BaseModel
     #[Optional('zero_rated')]
     public ?bool $zeroRated;
 
+    /**
+     * On a credit note that names the sale invoice it credits: that invoice's ID.
+     */
+    #[Optional('original_invoice_id')]
+    public ?string $originalInvoiceID;
+
     public function __construct()
     {
         $this->initialize();
@@ -167,6 +176,7 @@ final class Invoice implements BaseModel
         Type|string|null $type = null,
         ?\DateTimeInterface $updated = null,
         ?bool $zeroRated = null,
+        ?string $originalInvoiceID = null,
     ): self {
         $self = new self;
 
@@ -192,6 +202,7 @@ final class Invoice implements BaseModel
         null !== $type && $self['type'] = $type;
         null !== $updated && $self['updated'] = $updated;
         null !== $zeroRated && $self['zeroRated'] = $zeroRated;
+        null !== $originalInvoiceID && $self['originalInvoiceID'] = $originalInvoiceID;
 
         return $self;
     }
@@ -279,7 +290,9 @@ final class Invoice implements BaseModel
     }
 
     /**
-     * Unique URL to view the invoice. Append "/pdf" to download a PDF copy.
+     * Unique, unguessable URL to view the invoice. Append "/pdf" to download a
+     * PDF copy. Invoices created before the November 2026 relaunch keep their
+     * earlier style of link.
      */
     public function withInvoiceURL(string $invoiceURL): self
     {
@@ -396,6 +409,17 @@ final class Invoice implements BaseModel
     {
         $self = clone $this;
         $self['zeroRated'] = $zeroRated;
+
+        return $self;
+    }
+
+    /**
+     * On a credit note that names the sale invoice it credits: that invoice's ID.
+     */
+    public function withOriginalInvoiceID(string $originalInvoiceID): self
+    {
+        $self = clone $this;
+        $self['originalInvoiceID'] = $originalInvoiceID;
 
         return $self;
     }
