@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.5.0...v0.6.0) (2026-11-22)
+
+
+### Features
+
+* **api:** batches, consultation_optional, confirmation_number and webhook signatures ([#11](https://github.com/VAT-Sense/vatsense-php/issues/11)) ([652b062](https://github.com/VAT-Sense/vatsense-php/commit/652b062fa50a4d2241377f15453a6b4f03e224a0))
+
 ## [0.5.0](https://github.com/VAT-Sense/vatsense-php/compare/v0.4.1...v0.5.0) (2026-11-05)
 
 
