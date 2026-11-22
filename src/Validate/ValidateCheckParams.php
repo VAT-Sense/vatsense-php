@@ -39,6 +39,7 @@ use Vatsense\Core\Contracts\BaseModel;
  *   matchCompanyName?: string|null,
  *   matchPostcode?: string|null,
  *   matchStreet?: string|null,
+ *   consultationOptional?: bool|null,
  * }
  */
 final class ValidateCheckParams implements BaseModel
@@ -107,6 +108,13 @@ final class ValidateCheckParams implements BaseModel
     #[Optional]
     public ?string $matchStreet;
 
+    /**
+     * With `requesterVatNumber`: answer from a national register, with no
+     * `consultationNumber`, when VIES cannot answer, instead of the `412`.
+     */
+    #[Optional]
+    public ?bool $consultationOptional;
+
     public function __construct()
     {
         $this->initialize();
@@ -126,6 +134,7 @@ final class ValidateCheckParams implements BaseModel
         ?string $matchCompanyName = null,
         ?string $matchPostcode = null,
         ?string $matchStreet = null,
+        ?bool $consultationOptional = null,
     ): self {
         $self = new self;
 
@@ -137,6 +146,7 @@ final class ValidateCheckParams implements BaseModel
         null !== $matchCompanyName && $self['matchCompanyName'] = $matchCompanyName;
         null !== $matchPostcode && $self['matchPostcode'] = $matchPostcode;
         null !== $matchStreet && $self['matchStreet'] = $matchStreet;
+        null !== $consultationOptional && $self['consultationOptional'] = $consultationOptional;
 
         return $self;
     }
@@ -237,6 +247,18 @@ final class ValidateCheckParams implements BaseModel
     {
         $self = clone $this;
         $self['matchStreet'] = $matchStreet;
+
+        return $self;
+    }
+
+    /**
+     * With `requesterVatNumber`: answer from a national register, with no
+     * `consultationNumber`, when VIES cannot answer, instead of the `412`.
+     */
+    public function withConsultationOptional(bool $consultationOptional): self
+    {
+        $self = clone $this;
+        $self['consultationOptional'] = $consultationOptional;
 
         return $self;
     }

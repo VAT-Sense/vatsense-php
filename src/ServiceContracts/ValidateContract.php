@@ -31,6 +31,7 @@ interface ValidateContract
      * @param string $matchCompanyName The company name you hold, matched against the registered name. Legal forms such as Ltd or GmbH, accents, punctuation and word order are ignored. Sending any `match_` parameter adds `match` to the response; matching costs nothing extra.
      * @param string $matchPostcode The postcode you hold, looked for in the registered address. Spaces are ignored.
      * @param string $matchStreet The street line you hold, looked for in the registered address.
+     * @param bool $consultationOptional With `requesterVatNumber`: answer from a national register, with no `consultationNumber`, when VIES cannot answer, instead of the `412`.
      * @param RequestOpts|null $requestOptions
      *
      * @throws APIException
@@ -45,5 +46,6 @@ interface ValidateContract
         ?string $matchCompanyName = null,
         ?string $matchPostcode = null,
         ?string $matchStreet = null,
+        ?bool $consultationOptional = null,
     ): ValidateCheckResponse;
 }

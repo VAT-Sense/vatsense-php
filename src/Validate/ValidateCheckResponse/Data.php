@@ -18,6 +18,7 @@ use Vatsense\Validate\ValidateCheckResponse\Data\MatchResult;
  *
  * @phpstan-type DataShape = array{
  *   company?: CompanyShape|null,
+ *   confirmationNumber?: string|null,
  *   consultationNumber?: string|null,
  *   match?: null|MatchResult|MatchResultShape,
  *   valid?: bool|null,
@@ -31,6 +32,13 @@ final class Data implements BaseModel
     /** @var CompanyVariants|null $company */
     #[Optional]
     public ValidationCompany|EoriValidationCompany|null $company;
+
+    /**
+     * VAT Sense's own reference for this check (beta, only for accounts in the
+     * beta). It is not an official number.
+     */
+    #[Optional('confirmation_number', nullable: true)]
+    public ?string $confirmationNumber;
 
     /**
      * Official consultation number (only returned when requester_vat_number is provided).
@@ -68,6 +76,7 @@ final class Data implements BaseModel
         ?string $consultationNumber = null,
         ?bool $valid = null,
         MatchResult|array|null $match = null,
+        ?string $confirmationNumber = null,
     ): self {
         $self = new self;
 
@@ -75,6 +84,7 @@ final class Data implements BaseModel
         null !== $consultationNumber && $self['consultationNumber'] = $consultationNumber;
         null !== $valid && $self['valid'] = $valid;
         null !== $match && $self['match'] = $match;
+        null !== $confirmationNumber && $self['confirmationNumber'] = $confirmationNumber;
 
         return $self;
     }
