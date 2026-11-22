@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vatsense\Batches\BatchResult;
 
+use Vatsense\Batches\BatchResult\MatchResult\Field;
 use Vatsense\Core\Attributes\Optional;
 use Vatsense\Core\Concerns\SdkModel;
 use Vatsense\Core\Contracts\BaseModel;

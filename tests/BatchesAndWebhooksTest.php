@@ -48,12 +48,15 @@ class BatchesAndWebhooksTest extends TestCase
     /**
      * @return array{\Vatsense\Client, Client}
      */
-    private function client(mixed $data): array
+    private function client(mixed $data, int $calls = 1): array
     {
+        // A response's body can be read once, so each call gets its own.
         $transporter = new Client;
-        $transporter->setDefaultResponse(
-            $this->response(json_encode(['success' => true, 'code' => 200, 'data' => $data], flags: Util::JSON_ENCODE_FLAGS) ?: '')
-        );
+        for ($i = 0; $i < $calls; ++$i) {
+            $transporter->addResponse(
+                $this->response(json_encode(['success' => true, 'code' => 200, 'data' => $data], flags: Util::JSON_ENCODE_FLAGS) ?: '')
+            );
+        }
 
         $client = new \Vatsense\Client(
             baseUrl: 'http://localhost',
@@ -91,7 +94,7 @@ class BatchesAndWebhooksTest extends TestCase
     public function testEveryActionCallsItsPath(): void
     {
         $id = '01JM0000000000000000000000';
-        [$client, $transporter] = $this->client($this->batch);
+        [$client, $transporter] = $this->client($this->batch, calls: 5);
 
         $client->batches->retrieve($id);
         $client->batches->start($id, shortfall: 'overage');

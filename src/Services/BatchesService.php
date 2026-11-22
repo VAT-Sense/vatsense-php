@@ -251,20 +251,6 @@ final class BatchesService
         string $batchID,
         RequestOptions|array|null $requestOptions = null,
     ): string {
-        $body = $this->raw->resultsCsv($batchID, $requestOptions)->parse();
-
-        if (is_string($body)) {
-            return $body;
-        }
-
-        $csv = '';
-
-        if (is_iterable($body)) {
-            foreach ($body as $piece) {
-                $csv .= is_string($piece) ? $piece : '';
-            }
-        }
-
-        return $csv;
+        return (string) $this->raw->resultsCsv($batchID, $requestOptions)->getBody();
     }
 }

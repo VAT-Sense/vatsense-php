@@ -78,6 +78,7 @@ final class BatchesRawService
 
         if (isset($body['rows']) && is_array($body['rows'])) {
             $body['rows'] = array_map(
+                // @phpstan-ignore-next-line argument.type
                 static fn (mixed $row): mixed => is_array($row) ? Util::array_transform_keys($row, self::ROW_NAMES) : $row,
                 $body['rows'],
             );
