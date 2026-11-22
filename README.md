@@ -72,6 +72,64 @@ echo $response->data->consultationNumber;
 
 > **Note:** GB requester numbers only work for GB validations, and EU requester numbers only work for EU validations. Cross-region requests are not supported.
 
+If you would rather have an answer than wait for a consultation number when VIES is down, pass `consultationOptional: true`. Where a national register can confirm the number, you get the answer with no `consultationNumber` instead of the `412`.
+
+### Check many numbers at once (batches)
+
+A batch checks a list of VAT numbers, as the dashboard's bulk validator does with a file. Batch calls are free and each number checked counts as one request. With a test key the batch is answered from the test numbers and costs nothing.
+
+```php
+$batch = $client->batches->create(
+    numbers: ['GB288305674', 'FR12345678901'],
+    reference: 'November customers',
+    idempotencyKey: 'november-customers',
+)->data;
+
+// Poll, or take the batch.completed webhook instead.
+while (!in_array($client->batches->retrieve($batch->id)->data->status, ['complete', 'paused', 'expired'], true)) {
+    sleep(10);
+}
+
+$after = 0;
+do {
+    $page = $client->batches->results($batch->id, after: $after, limit: 1000)->data;
+    foreach ($page->data as $row) {
+        echo $row->vatNumber, ' ', $row->result, ' ', $row->companyName, PHP_EOL;
+    }
+    $after = $page->nextAfter;
+} while ($page->hasMore);
+
+$csv = $client->batches->resultsCsv($batch->id);
+```
+
+Pass `rows: [['vatNumber' => ..., 'companyName' => ..., 'postcode' => ...]]` instead of `numbers` for company matching. A batch can also be paused, continued, completed and, while a draft, deleted.
+
+### Check a webhook's signature
+
+Every webhook event carries a `VatSense-Signature` header. Check it against the raw request body with the endpoint's signing secret before trusting the event:
+
+```php
+use Vatsense\Webhooks\Webhook;
+use Vatsense\Webhooks\WebhookSignatureException;
+
+try {
+    $event = Webhook::constructEvent(
+        file_get_contents('php://input'),
+        $_SERVER['HTTP_VATSENSE_SIGNATURE'] ?? null,
+        'whsec_...',
+    );
+} catch (WebhookSignatureException $e) {
+    http_response_code(400);
+    exit;
+}
+
+if ('batch.completed' === $event['type']) {
+    // ...
+}
+```
+
+Events more than 5 minutes old are refused (change it with `tolerance:`). During the 24 hours after a secret is rolled, events signed with either secret are accepted.
+
 ### Find the VAT rate for a country
 
 ```php
@@ -198,6 +256,7 @@ $response = $client->validate->check(
 | `$client->rates`      | VAT/GST rate lookups, price calculations         |
 | `$client->countries`  | Country data and province lookups                |
 | `$client->currency`   | Exchange rates and currency conversion           |
+| `$client->batches`    | Check many VAT numbers in one batch              |
 | `$client->invoice`    | Create and manage VAT-compliant invoices         |
 | `$client->usage`      | Check your API usage                             |
 

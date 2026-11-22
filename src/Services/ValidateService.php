@@ -67,6 +67,7 @@ final class ValidateService implements ValidateContract
      * @param string $matchCompanyName The company name you hold, matched against the registered name. Legal forms such as Ltd or GmbH, accents, punctuation and word order are ignored. Sending any `match_` parameter adds `match` to the response; matching costs nothing extra.
      * @param string $matchPostcode The postcode you hold, looked for in the registered address. Spaces are ignored.
      * @param string $matchStreet The street line you hold, looked for in the registered address.
+     * @param bool $consultationOptional Send `true` with `requesterVatNumber` if you would rather have an answer than wait for a consultation number. When VIES cannot answer for the number's country and that country has a national register fallback, the answer comes from the register with no `consultationNumber`, instead of the `412`. If VIES cannot check your own `requesterVatNumber`, the number is checked without it, again with no `consultationNumber`. Leave it out if you need the consultation number as proof of the check.
      * @param RequestOpts|null $requestOptions
      *
      * @throws APIException
@@ -81,6 +82,7 @@ final class ValidateService implements ValidateContract
         ?string $matchCompanyName = null,
         ?string $matchPostcode = null,
         ?string $matchStreet = null,
+        ?bool $consultationOptional = null,
     ): ValidateCheckResponse {
         $params = Util::removeNulls(
             [
@@ -92,6 +94,7 @@ final class ValidateService implements ValidateContract
                 'matchCompanyName' => $matchCompanyName,
                 'matchPostcode' => $matchPostcode,
                 'matchStreet' => $matchStreet,
+                'consultationOptional' => $consultationOptional,
             ],
         );
 

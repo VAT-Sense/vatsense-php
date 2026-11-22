@@ -13,6 +13,7 @@ use Vatsense\Services\CountriesService;
 use Vatsense\Services\CurrencyService;
 use Vatsense\Services\InvoiceService;
 use Vatsense\Services\RatesService;
+use Vatsense\Services\BatchesService;
 use Vatsense\Services\SandboxService;
 use Vatsense\Services\UsageService;
 use Vatsense\Services\ValidateService;
@@ -61,6 +62,11 @@ class Client extends BaseClient
      * @api
      */
     public SandboxService $sandbox;
+
+    /**
+     * @api
+     */
+    public BatchesService $batches;
 
     /**
      * @param RequestOpts|null $requestOptions
@@ -129,6 +135,7 @@ class Client extends BaseClient
         $this->invoice = new InvoiceService($this);
         $this->usage = new UsageService($this);
         $this->sandbox = new SandboxService($this);
+        $this->batches = new BatchesService($this);
     }
 
     /**

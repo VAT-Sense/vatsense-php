@@ -56,6 +56,7 @@ final class ValidateRawService implements ValidateRawContract
      *   matchCompanyName?: string,
      *   matchPostcode?: string,
      *   matchStreet?: string,
+     *   consultationOptional?: bool,
      * }|ValidateCheckParams $params
      * @param RequestOpts|null $requestOptions
      *
@@ -87,6 +88,7 @@ final class ValidateRawService implements ValidateRawContract
                     'matchStreet' => 'match_street',
                     'requesterVatNumber' => 'requester_vat_number',
                     'vatNumber' => 'vat_number',
+                    'consultationOptional' => 'consultation_optional',
                 ],
             ),
             options: $options,
